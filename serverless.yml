@@ -1,0 +1,4 @@
+# serverless.yml
+
+myNextApplication:
+  component: "@sls-next/serverless-component@3.19.0" # use latest version, currently 3.6.0
