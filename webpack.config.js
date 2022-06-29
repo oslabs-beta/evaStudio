@@ -4,7 +4,7 @@ const { SourceMapDevToolPlugin } = require("webpack");
 
 module.exports = {
     mode: process.env.NODE_ENV,
-    entry: './client/index.js',
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js',
