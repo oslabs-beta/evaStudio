@@ -5,11 +5,10 @@ const prometheusController = {};
 prometheusController.getPromMetrics = async (req, res, next) => {
   const { urlInput } = req.body;
   try {
-    const promQL = `${urlInput}/http_requests_total`;
+    const promQL = `${urlInput}/api/v1/query?query=http_requests_total`;
     await axios.get(promQL)
       .then(promRes => {
-        res.locals.promMetrics = promRes;
-        console.log(promRes);
+        res.locals.promMetrics = promRes.data;
         return next();
       })
   } catch (err) {
