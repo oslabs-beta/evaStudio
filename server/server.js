@@ -13,9 +13,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+
+// Import routes
+const metricsRoute = require('./routes/metricsRoute');
+
 /**
  * define route handlers
  */
+app.use('/metrics', metricsRoute);
 
 // Test route
 app.get('/', (req, res) => res.status(200).send('Hello Mate'));
