@@ -19,4 +19,4 @@ prometheusController.getPromMetrics = async (req, res, next) => {
   }
 }
 
-module.exports = prometheusController; 
+module.exports = prometheusController;
