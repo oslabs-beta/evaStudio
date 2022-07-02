@@ -37,8 +37,16 @@ module.exports = {
                 test: /\.js$/,
                 enforce: 'pre',
                 use: ['source-map-loader'],
+            },
+            {
+                test: /\.(ts|tsx)$/,
+                exclude: /node_modules/,
+                use: ['ts-loader'],
             }
-        ]
+        ],
+    },
+    resolve: {
+        extensions: ['.ts', '.tsx', '.jsx', '.js', '.json'],
     },
     devServer: {
         static: {
@@ -53,8 +61,5 @@ module.exports = {
         proxy: {
             '/': 'http://localhost:3000' // listening for all requests that come in at port 3000
         }
-    },
-    resolve: {
-        extensions: ['.js', '.json', '.jsx'],
-    },
+    }
 };
