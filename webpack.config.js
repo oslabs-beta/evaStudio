@@ -51,7 +51,7 @@ module.exports = {
         liveReload: true,
         historyApiFallback: true, // fall back to entry path every time it loads for react router
         proxy: {
-            '*': 'http://localhost:3000' // listening for all requests that come in at port 3000
+            '/': 'http://localhost:3000' // listening for all requests that come in at port 3000
         }
     },
     resolve: {

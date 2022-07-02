@@ -2,7 +2,8 @@ const express = require('express');
 const Router = express.Router();
 const prometheusController = require('../controllers/prometheusController');
 
-Router.get('/', prometheusController.getPromMetrics, (req, res) => {
+Router.post('/', prometheusController.getPromMetrics, (req, res) => {
+  console.log(res.locals.promMetrics)
   return res.status(200).json(res.locals.promMetrics);
 });
 

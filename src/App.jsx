@@ -10,8 +10,8 @@ const App = () => {
   }
 
   const fetchMetrics = async (e) => {
-    e.preventDefault;
-    const endpoint = '/metrics/';
+    e.preventDefault();
+    const endpoint = '/metrics';
     const data = { urlInput: url }
     await axios.post(endpoint, data)
       .then((res) => console.log(res));
