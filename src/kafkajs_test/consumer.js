@@ -1,4 +1,4 @@
-const { Kafka } = require('kafkajs');
+const { Kafka, logLevel } = require('kafkajs');
 
 // kafka client
 const kafka = new Kafka({
@@ -25,7 +25,7 @@ const producerRun = async () => {
 }
 
 const startConsumer = async () => {
-    const consumer = kafka.consumer({ groupId: 'group1'});
+    const consumer = kafka.consumer({ groupId: 'newgroup'});
 
     await consumer.connect();
     await consumer.subscribe({topic: 'first_topic', fromBeginning: true});
