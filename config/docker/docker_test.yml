@@ -27,3 +27,9 @@ services:
 # docker exec -it broker sh
 # kafka-topics --bootstrap-server broker:9092 --topic topicname1 --create --partitions 3 --replication-factor 2
 # kafka-console-producer --bootstrap-server broker:9092 --topic topicname1
+
+# == To list topics in Producer ==
+# kafka-topics --bootstrap-server broker:9092 --list
+
+# == To read all messages in Consumer from a given topic ==
+# kafka-console-consumer --bootstrap-server broker:9092 --topic quickstart --from-beginning 
