@@ -22,3 +22,8 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+
+# === To create a topic & print message from Producer ===
+# docker exec -it broker sh
+# kafka-topics --bootstrap-server broker:9092 --topic topicname1 --create --partitions 3 --replication-factor 2
+# kafka-console-producer --bootstrap-server broker:9092 --topic topicname1
