@@ -12,8 +12,8 @@ const GetStartedContainer = () => {
   return (
     <div id='getStartedContainer'>
       <div id='gettingStartedWrapper'>
-        <h3>Get Started:</h3>
-        <p>To get started, connect a remote cluster(s) to monitor their health metrics, or create new clusters locally to fast-track development.</p>
+        <h3>Let's Get Started</h3>
+        <p>Connect your remote cluster to monitor their health metrics, or create new clusters locally to fast-track your development process.</p>
         <div id='startBtnsWrapper'>
           <button className='primaryButton' onClick={() => getStartedNavigation(connectCluster)}>Connect</button>
           <button className='secondaryButton' onClick={() => getStartedNavigation(createClustersContainer)}>Create Clusters</button>

@@ -1,16 +1,21 @@
 @import '_gettingStarted.scss';
+@import '_navigationPanel.scss';
+@import '_mainContainer.scss';
 
 body {
   font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 #navBar {
   padding-left: 30px;
-  padding-top: 5px;
+  padding-top: 2px;
+  padding-bottom: 5px;
 }
 
 .primaryButton {
-  min-width: 130px;
+  min-width: 140px;
   height: 45px;
   background-color: aqua;
   border: 0;
@@ -22,11 +27,19 @@ body {
 }
 
 .secondaryButton {
-  min-width: 130px;
+  min-width: 140px;
   height: 45px;
   border: 0;
   border-radius: 5px;
   cursor: pointer;
   font-family: inherit;
+  font-size: 15px;
   font-weight: 600;
+}
+
+.inputField {
+  height: 38px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 0 10px;
 }

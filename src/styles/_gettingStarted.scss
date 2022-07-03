@@ -1,10 +1,11 @@
-#getStartedContainer {
+#getStartedContainer,
+#connectPannel {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-self: center;
   max-width: 100%;
-  padding: 0 20px;
+  padding-left: 100px;
 }
 
 #gettingStartedWrapper {
@@ -15,14 +16,15 @@
   width: 30%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 20px;
-  padding: 30px 50px 50px 50px;
+  padding: 30px 40px 50px 40px;
   margin-right: 10px;
 }
 
-#startBtnsWrapper {
+#startBtnsWrapper,
+#spacingButton {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 15px;
+  margin-top: 25px;
 }
 
 #brandImg {
