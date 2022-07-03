@@ -3,7 +3,7 @@ import React from 'react'
 const CreateClustersContainer = () => {
   return (
     <div id='createClustersContainer'>
-      <h1>createClustersContainer</h1>
+      <h1>CREATE CLUSTER INTERACTIVE DASHBOARD HERE</h1>
     </div>
   )
 }

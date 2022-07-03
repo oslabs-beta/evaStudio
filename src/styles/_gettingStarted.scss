@@ -1,0 +1,23 @@
+#getStartedContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+
+#gettingStartedWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  width: 500px;
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 50px;
+  margin-top: 15vw;
+}
+
+#startBtnsWrapper {
+  display: flex;
+  justify-content: space-evenly;
+}

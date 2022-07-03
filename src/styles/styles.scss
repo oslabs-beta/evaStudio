@@ -1,3 +1,32 @@
+@import '_gettingStarted.scss';
+
 body {
   font-family: 'Inter', sans-serif;
+}
+
+#navBar {
+  padding-left: 30px;
+  padding-top: 5px;
+}
+
+.primaryButton {
+  min-width: 130px;
+  height: 45px;
+  background-color: aqua;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.secondaryButton {
+  min-width: 130px;
+  height: 45px;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
 }

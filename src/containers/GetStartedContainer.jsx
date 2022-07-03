@@ -11,10 +11,14 @@ const GetStartedContainer = () => {
 
   return (
     <div id='getStartedContainer'>
-      <h3>Get Started:</h3>
-      <p>To get started, connect a remote cluster(s) to monitor their health metrics, or create new clusters locally to fast-track development.</p>
-      <button onClick={() => getStartedNavigation(connectCluster)}>Connect</button>
-      <button onClick={() => getStartedNavigation(createClustersContainer)}>Create Clusters</button>
+      <div id='gettingStartedWrapper'>
+        <h3>Get Started:</h3>
+        <p>To get started, connect a remote cluster(s) to monitor their health metrics, or create new clusters locally to fast-track development.</p>
+        <div id='startBtnsWrapper'>
+          <button className='primaryButton' onClick={() => getStartedNavigation(connectCluster)}>Connect</button>
+          <button className='secondaryButton' onClick={() => getStartedNavigation(createClustersContainer)}>Create Clusters</button>
+        </div>
+      </div>
     </div>
   )
 }
