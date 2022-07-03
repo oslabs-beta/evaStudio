@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+import { dashboard } from '../routes/reactRoutes';
 
 const LoginPanel = () => {
+  let navigate = useNavigate();
   const [url, setUrl] = useState('');
 
   const getUrl = (e) => {
@@ -14,7 +16,14 @@ const LoginPanel = () => {
     const endpoint = '/metrics';
     const data = { urlInput: url }
     await axios.post(endpoint, data)
-      .then((res) => console.log(res));
+      .then((res) => {
+        console.log(res)
+        navigate(dashboard, { replace: false }); // Reroutes on success to the route defined in React Router
+      })
+      .catch(err => {
+        console.log(err);
+        // show a modal for improper url
+      });
   }
 
   return (

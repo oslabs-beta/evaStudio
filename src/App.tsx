@@ -1,23 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import axios from 'axios';
 import NavBar from './components/NavBar';
-import LoginContainer from './containers/LoginContainer';
+import GetStartedContainer from './containers/GetStartedContainer';
+import ConnectPanel from './components/ConnectPanel';
+import CreateClustersContainer from './containers/CreateClustersContainer';
 import MainContainer from './containers/MainContainer';
+import OverviewContainer from './containers/OverviewContainer';
 
-const App = () => {
-
-  const [setup, setSetup] = useState(false);
-
+const App = (): JSX.Element => {
   return (
     <div id='app'>
-      {/* <NavBar />
-      {!setup ? <LoginContainer setSetup={setSetup} /> : <MainContainer />}
-      <Routes>
-        <Route path='/' />
-        <Route exact-path='/overview' element={<MainContainer />} />
-      </Routes> */}
-      <MainContainer />
+      <NavBar />
+      <div id='containerWrapper'>
+        <Routes>
+          <Route path='/' element={<GetStartedContainer />}>
+            <Route path='connect-cluster' element={<ConnectPanel />} />
+            <Route path='create-dev-clusters' element={<CreateClustersContainer />} />
+          </Route>
+          <Route path='/dashboard' element={<MainContainer />}> {/* Will nest all container routes inside dashboard route: ...8080/dashboard/overview */}
+            <Route path='overview' element={<OverviewContainer />} />
+          </Route>
+        </Routes>
+      </div>
     </div>
   )
 }

@@ -1,18 +1,15 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
-import { composeWithDevTools } from 'redux-devtools-extension';
-import reducers from './reducers/index.js';
-import thunk from 'redux-thunk';
-//import { someAction1 } from './actions/actions';
+import { configureStore } from '@reduxjs/toolkit' // toolkit is new version of Redux, much easier ot user
+import { useDispatch } from 'react-redux';
+// Import all reducers directly into the store
+import credentialReducer from './reducers/credentialsReducer';
 
-export const store = configureStore(
-  reducers
-);
+export const store = configureStore({ // no longer need to combineReducers in an index.js file
+  reducer: {
+    credentials: credentialReducer
+  }
+});
 
-export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
-export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootState,
-  unknown,
-  Action<string>
->;
+export type AppDispatch = typeof store.dispatch
+export const useAppDispatch: () => AppDispatch = useDispatch // Export a hook that can be reused to resolve types
+
+export default store;
