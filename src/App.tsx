@@ -11,19 +11,18 @@ const App = (): JSX.Element => {
   return (
     <div id='app'>
       <NavBar />
-      <div id='containerWrapper'>
+      <div id='containersWrapper'>
         <Routes>
-          <Route path='/' element={<GetStartedContainer />}>
-            <Route path='connect-cluster' element={<ConnectPanel />} />
-            <Route path='create-dev-clusters' element={<CreateClustersContainer />} />
-          </Route>
-          <Route path='/dashboard' element={<MainContainer />}> {/* Will nest all container routes inside dashboard route: ...8080/dashboard/overview */}
+          <Route path='/' element={<GetStartedContainer />} />
+          <Route path='/connect-cluster' element={<ConnectPanel />} />
+          <Route path='/create-dev-clusters' element={<CreateClustersContainer />} />
+          <Route path='/dashboard' element={<MainContainer />}>
             <Route path='overview' element={<OverviewContainer />} />
           </Route>
         </Routes>
       </div>
     </div>
-  )
+  );
 }
 
 export default App;

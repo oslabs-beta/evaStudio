@@ -1,8 +1,10 @@
 #getStartedContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-self: center;
+  max-width: 100%;
+  padding: 0 20px;
 }
 
 #gettingStartedWrapper {
@@ -10,14 +12,19 @@
   flex-direction: column;
   justify-content: center;
   align-self: center;
-  width: 500px;
-  border: 1px solid;
+  width: 30%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 20px;
-  padding: 50px;
-  margin-top: 15vw;
+  padding: 30px 50px 50px 50px;
+  margin-right: 10px;
 }
 
 #startBtnsWrapper {
   display: flex;
   justify-content: space-evenly;
+  margin-top: 15px;
+}
+
+#brandImg {
+  width: 70%;
 }
