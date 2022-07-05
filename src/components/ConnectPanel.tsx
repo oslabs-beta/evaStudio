@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { dashboard } from '../routes/reactRoutes';
 
-const LoginPanel = () => {
+const LoginPanel = (): JSX.Element => {
   let navigate = useNavigate();
   const [url, setUrl] = useState('');
 
@@ -32,7 +32,7 @@ const LoginPanel = () => {
       <div id='gettingStartedWrapper'>
         <form>
           <h3>Admin Manager URL</h3>
-          <input className='inputField' type='text' id='portURL' placeholder='Example: 34.205.177.109:9090' onChange={getUrl} size='50'></input>
+          <input className='inputField' type='text' id='portURL' placeholder='Example: 34.205.177.109:9090' onChange={getUrl} size={50}></input>
           <div id='spacingButton'>
             <input className='primaryButton' type='submit' id='submitURLBtn' onClick={fetchMetrics}></input>
           </div>
