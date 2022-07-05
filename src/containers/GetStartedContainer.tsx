@@ -10,7 +10,7 @@ const GetStartedContainer = () => {
   }
 
   return (
-    <div id='getStartedContainer'>
+    <div className='bg-amber-400'>
       <div id='gettingStartedWrapper'>
         <h3>Let's Get Started</h3>
         <p>Connect your remote cluster to monitor their health metrics, or create new clusters locally to fast-track your development process.</p>

@@ -5,6 +5,7 @@ import GetStartedContainer from './containers/GetStartedContainer';
 import ConnectPanel from './components/ConnectPanel';
 import CreateClustersContainer from './containers/CreateClustersContainer';
 import MainContainer from './containers/MainContainer';
+import './styles/globals.css';
 
 const App = (): JSX.Element => {
   return (
