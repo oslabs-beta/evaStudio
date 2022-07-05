@@ -2,29 +2,19 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { dashboard } from '../routes/reactRoutes';
+import { addHttpLink } from '../actions/credentials';
+import { useDispatch } from 'react-redux';
 
 const LoginPanel = (): JSX.Element => {
   let navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [url, setUrl] = useState('');
 
-  const getUrl = (e) => {
-    setUrl(e.target.value);   //  example of user input:  http://34.205.177.109:9090
-  }
-
-  const fetchMetrics = async (e) => {
+  const handleClick = (e) => {
     e.preventDefault();
-    navigate(dashboard); // uncomment to see what happens when you click submit
-    const endpoint = '/metrics';
-    const data = { urlInput: url }
-    await axios.post(endpoint, data)
-      .then((res) => {
-        console.log(res)
-        navigate(dashboard, { replace: false }); // Reroutes on success to the route defined in React Router, won't replace browser history
-      })
-      .catch(err => {
-        console.log(err);
-        // show a modal for improper url
-      });
+    dispatch(addHttpLink(url.trim()));
+    navigate(dashboard);
   }
 
   return (
@@ -32,9 +22,9 @@ const LoginPanel = (): JSX.Element => {
       <div id='gettingStartedWrapper'>
         <form>
           <h3>Admin Manager URL</h3>
-          <input className='inputField' type='text' id='portURL' placeholder='Example: 34.205.177.109:9090' onChange={getUrl} size={50}></input>
+          <input className='inputField' type='text' id='portURL' placeholder='Example: 34.205.177.109:9090' value={url} onChange={(e) => setUrl(e.target.value)} size={50}></input>
           <div id='spacingButton'>
-            <input className='primaryButton' type='submit' id='submitURLBtn' onClick={fetchMetrics}></input>
+            <input className='primaryButton' type='submit' id='submitURLBtn' onClick={handleClick}></input>
           </div>
         </form>
       </div>
