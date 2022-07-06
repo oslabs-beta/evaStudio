@@ -16,12 +16,13 @@ app.use(cookieParser());
 
 // Import routes
 const metricsRoute = require('./routes/metricsRoute');
+const kafkaJSRoute = require('./routes/kafkaJSRute');
 
 /**
  * define route handlers
  */
 app.use('/metrics', metricsRoute);
-
+app.use('/setupKafka', kafkaJSRoute);
 // Test route
 app.get('/', (req, res) => res.status(200).send('Hello Mate'));
 
