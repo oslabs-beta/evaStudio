@@ -1,9 +1,9 @@
 import React from 'react';
-import LogoIcon from '../assets/logo.svg' ;
+import LogoIcon from '../assets/logo.svg';
 
 const NavBar = () => {
   return (
-    <div className='absolute top-0 left-0 w-100 p-2' id='navBar'>
+    <div className='w-100 p-2' id='navBar'>
       <img className='md:w-60 p-2 rounded-md bg-indigo-300' src={LogoIcon} alt="" />
     </div>
   )
