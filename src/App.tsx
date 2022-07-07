@@ -5,12 +5,14 @@ import GetStartedContainer from './containers/GetStartedContainer';
 import ConnectPanel from './components/ConnectPanel';
 import CreateClustersContainer from './containers/CreateClustersContainer';
 import MainContainer from './containers/MainContainer';
+import './styles/globals.css';
+
 
 const App = (): JSX.Element => {
   return (
-    <div id='app'>
+    <div className='h-screen bg-indigo-50' id='app'>
       <NavBar />
-      <div id='containersWrapper'>
+      <div className='md:my-auto w-fit h-fit' id='containersWrapper'>
         <Routes>
           <Route path='/' element={<GetStartedContainer />} />
           <Route path='/connect-cluster' element={<ConnectPanel />} />
@@ -19,6 +21,7 @@ const App = (): JSX.Element => {
         </Routes>
       </div>
     </div >
+    
   );
 }
 
