@@ -13,7 +13,7 @@ const GetStartedContainer = () => {
 
   return (
     <div className='flex flex-col md:flex-row gap-4 items-center md:justify-around'>
-      <div className='bg-slate-700 rounded-md mx-auto text-white px-8 py-16 max-w-xl grid grid-cols-1 gap-8' id='gettingStartedWrapper'>
+      <div className='bg-slate-700 rounded-lg mx-auto text-white px-10 py-16 max-w-xl grid grid-cols-1 gap-8' id='gettingStartedWrapper'>
         <h3 className='text-6xl font-bold'>Let's Get Started</h3>
         <p className='text-lg'>Connect your remote cluster to monitor their health metrics, or create new clusters locally to fast-track your development process.</p>
         <div className='flex justify-start items-center gap-5'  id='startBtnsWrapper'>
