@@ -19,7 +19,7 @@ const LoginPanel = (): JSX.Element => {
 
   return (
     <div id='connectPannel'>
-      <div id='gettingStartedWrapper'>
+      <div className='bg-gray-700 px-5 py-40' id='gettingStartedWrapper'>
         <form>
           <h3>Admin Manager URL</h3>
           <input className='inputField' type='text' id='portURL' placeholder='Example: 34.205.177.109:9090' value={url} onChange={(e) => setUrl(e.target.value)} size={50}></input>
@@ -28,7 +28,7 @@ const LoginPanel = (): JSX.Element => {
           </div>
         </form>
       </div>
-      <img id='brandImg' src='https://static.vecteezy.com/system/resources/previews/004/745/458/non_2x/modern-flat-design-3d-isometric-concept-of-big-data-analysis-for-banner-and-website-isometric-landing-page-template-digital-information-chart-and-statistic-financial-budget-illustration-free-vector.jpg' />
+      {/* <img id='brandImg' src='https://static.vecteezy.com/system/resources/previews/004/745/458/non_2x/modern-flat-design-3d-isometric-concept-of-big-data-analysis-for-banner-and-website-isometric-landing-page-template-digital-information-chart-and-statistic-financial-budget-illustration-free-vector.jpg' /> */}
     </div>
   )
 }
