@@ -7,11 +7,13 @@ import CreateClustersContainer from './containers/CreateClustersContainer';
 import MainContainer from './containers/MainContainer';
 import './styles/globals.css';
 
+import heroImg from './assets/hero.svg';
+
 const App = (): JSX.Element => {
   return (
-    <div id='app'>
+    <div className='h-screen bg-indigo-50 flex flex-col md:flex-row gap-4 items-center md:justify-around' id='app'>
       <NavBar />
-      <div id='containersWrapper'>
+      <div className='md:my-auto w-fit h-fit' id='containersWrapper'>
         <Routes>
           <Route path='/' element={<GetStartedContainer />} />
           <Route path='/connect-cluster' element={<ConnectPanel />} />
@@ -19,7 +21,9 @@ const App = (): JSX.Element => {
           <Route path='/dashboard/*' element={<MainContainer />} />
         </Routes>
       </div>
+      <img className='md:w-3/5' id='brandImg' src={heroImg} />
     </div >
+    
   );
 }
 
