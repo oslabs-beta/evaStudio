@@ -16,9 +16,9 @@ const MainContainer = () => {
 
   return (
     <div id='mainContainer'>
-      <div id='mainContainerWrapper'>
-        <NavigationPanel navigateFunc={navigateFunc} />
-        <div id='componentContainer'>
+      <div className='flex justify-items-center align-items-center' id='mainContainerWrapper' >
+        <NavigationPanel className='w-1/3' navigateFunc={navigateFunc} />
+        <div className='w-2/3' id='componentContainer'>
           <Routes>
             <Route path='overview' element={<OverviewContainer />} />
             <Route path='producers' element={<ProducersContainer />} />

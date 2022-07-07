@@ -3,7 +3,7 @@ import { overview, producers, consumers, topics, zookeeper } from '../routes/rea
 
 const NavigationPanel = (props) => {
   return (
-    <div id='navigationPanel'>
+    <div className='flex flex-col justify-items-content align-items-content' id='navigationPanel'>
       <div className='buttonSpacer'>
         <button className='secondaryButton' onClick={() => props.navigateFunc(overview)}>Overview</button>
       </div>
