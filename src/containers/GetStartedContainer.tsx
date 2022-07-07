@@ -1,8 +1,7 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { connectCluster, createClustersContainer } from '../routes/reactRoutes';
-// import  ReactLogo  from "../assets/logo.svg";
-// import LogoIcon from '../assets/logo.svg' ;
+import heroImg from '../assets/hero.svg';
 
 
 const GetStartedContainer = () => {
@@ -13,12 +12,8 @@ const GetStartedContainer = () => {
   }
 
   return (
-    <div className='bg-slate-700 rounded-md mx-auto text-white px-8 py-16'>
-      <div className="w-12">
-        {/* <svg></svg> */}
-              {/* <ReactLogo className="fill-white" /> */}
-            </div>
-      <div className='max-w-xl grid grid-cols-1 gap-8' id='gettingStartedWrapper'>
+    <div className='flex flex-col md:flex-row gap-4 items-center md:justify-around'>
+      <div className='bg-slate-700 rounded-md mx-auto text-white px-8 py-16 max-w-xl grid grid-cols-1 gap-8' id='gettingStartedWrapper'>
         <h3 className='text-6xl font-bold'>Let's Get Started</h3>
         <p className='text-lg'>Connect your remote cluster to monitor their health metrics, or create new clusters locally to fast-track your development process.</p>
         <div className='flex justify-start items-center gap-5'  id='startBtnsWrapper'>
@@ -39,7 +34,8 @@ const GetStartedContainer = () => {
            </button>
         </div>
       </div>
-      {/* <img className='md:w-2/5' id='brandImg' src='https://static.vecteezy.com/system/resources/previews/004/745/458/non_2x/modern-flat-design-3d-isometric-concept-of-big-data-analysis-for-banner-and-website-isometric-landing-page-template-digital-information-chart-and-statistic-financial-budget-illustration-free-vector.jpg' /> */}
+      <img className='md:w-3/5' id='brandImg' src={heroImg} />
+
     </div>
   )
 }
