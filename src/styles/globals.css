@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.panel-content {
+  padding : 0;
+}
+
+.panel, .panel-solo {
+  margin: 0;
+}
