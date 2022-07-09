@@ -48,6 +48,7 @@
     "node-fetch": "^3.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-flow-renderer": "^10.3.8",
     "react-redux": "^8.0.2",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.2.2",
@@ -55,7 +56,8 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
     "styled-components": "^5.3.5",
-    "ts-loader": "^9.3.1"
+    "ts-loader": "^9.3.1",
+    "zustand": "^4.0.0-rc.1"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
