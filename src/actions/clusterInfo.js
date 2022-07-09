@@ -7,7 +7,7 @@ export const clusterInfoSlice = createSlice({
   },
   reducers: {
     updateNumOfClusters: (state, action) => {
-      state.numOfClusters = action.payload
+      state.numOfClusters++
     }
   }
 });

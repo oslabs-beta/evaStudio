@@ -1,5 +1,4 @@
 import React, { useCallback, useState, useRef } from 'react';
-import { useSelector } from 'react-redux';
 import ReactFlow, {
   Controls,
   addEdge,
@@ -9,6 +8,8 @@ import ReactFlow, {
 } from 'react-flow-renderer';
 import { initialNodes, initialEdges } from './InitialClusters';
 import FlowCluster from './FlowCluster';
+import { useDispatch } from 'react-redux';
+import { updateNumOfClusters } from '../actions/clusterInfo';
 
 const defaultEdgeOptions = {
   id: 'edges-e2-2a',
@@ -18,6 +19,7 @@ const defaultEdgeOptions = {
 }
 
 const DragCanvas = (): JSX.Element => { // holds the nodes in a dragable canvas playgound
+  // all logic below pertains to setting new nodes and arrows between them
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges);
 
@@ -31,17 +33,18 @@ const DragCanvas = (): JSX.Element => { // holds the nodes in a dragable canvas 
   );
   const onConnect = (params) => setEdges((eds) => addEdge(params, eds)); // for connecting the nodes to each other
 
+
   // Logic for adding new nodes on button click
   const yPos = useRef(550); // for setting position of first new node
-  const [clusterCount, setClusterCount] = useState<Number>(1);
+  const dispatch = useDispatch();
 
   const addCluster = () => {
     yPos.current += 100; // increments position of new node each time by 100
-    setClusterCount(++clusterCount);
+    dispatch(updateNumOfClusters(null));
 
     const flowCluster = { // new Kafka Cluster / node user adds
       id: `${Math.random() * 125}`,
-      data: { label: <FlowCluster clusterCount={clusterCount} /> },
+      data: { label: <FlowCluster /> },
       position: { x: 250, y: yPos.current }
     }
 
