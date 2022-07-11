@@ -1,4 +1,5 @@
 import React, { useCallback, useState, useRef } from 'react';
+import { interactiveNode } from '../types';
 import ReactFlow, {
   Controls,
   addEdge,
@@ -7,10 +8,11 @@ import ReactFlow, {
   applyEdgeChanges
 } from 'react-flow-renderer';
 import { initialNodes, initialEdges } from './InitialClusters';
-import FlowCluster from './FlowCluster';
-import { useDispatch } from 'react-redux';
-import { updateNumOfClusters } from '../actions/clusterInfo';
+import InteractiveNode from './InteractiveNode';
+import DropdownConfigs from './DropdownConfigs';
+import { useSelector } from 'react-redux';
 
+// Default options for line that connects nodes
 const defaultEdgeOptions = {
   id: 'edges-e2-2a',
   source: 'edges-2',
@@ -19,6 +21,8 @@ const defaultEdgeOptions = {
 }
 
 const DragCanvas = (): JSX.Element => { // holds the nodes in a dragable canvas playgound
+  const { dataSource, numOfClusters, sync } = useSelector((state: any) => state.pipelineConfig);
+
   // all logic below pertains to setting new nodes and arrows between them
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges);
@@ -34,21 +38,24 @@ const DragCanvas = (): JSX.Element => { // holds the nodes in a dragable canvas 
   const onConnect = (params) => setEdges((eds) => addEdge(params, eds)); // for connecting the nodes to each other
 
 
-  // Logic for adding new nodes on button click
+  // Logic for adding new nodes on dropdown menu option click
   const yPos = useRef(550); // for setting position of first new node
-  const dispatch = useDispatch();
 
-  const addCluster = () => {
+  const addNode = (type, nodeCount) => {
     yPos.current += 100; // increments position of new node each time by 100
-    dispatch(updateNumOfClusters(null));
+    const resultArray: Array<interactiveNode> = [];
 
-    const flowCluster = { // new Kafka Cluster / node user adds
-      id: `${Math.random() * 125}`,
-      data: { label: <FlowCluster /> },
-      position: { x: 250, y: yPos.current }
+    for (let i = 0; i < nodeCount; i++) {
+      resultArray.push(
+        {
+          id: `Node ${i + 1}`,
+          data: { label: <InteractiveNode type={type} /> },
+          position: { x: 250, y: yPos.current }
+        }
+      )
     }
 
-    setNodes((nds) => nds.concat(flowCluster)); // takes current nodes and concats the newest one to the end
+    setNodes((nds) => nds.concat(...resultArray)); // takes current nodes and concats the newest one to the end
   }
 
   return (
@@ -68,12 +75,7 @@ const DragCanvas = (): JSX.Element => { // holds the nodes in a dragable canvas 
         <Background color='#1A192B' />
         <Controls />
       </ReactFlow>
-      <button
-        className='bg-gradient-to-r from-pink-600 to-orange-600 py-3 px-6 text-lg rounded-md w-48 flex items-center justify-center gap-2 text-white absolute top-[10px] left-[10px] z-[1000]'
-        onClick={() => addCluster()}
-      >
-        Add Cluster
-      </button>
+      <DropdownConfigs addNode={addNode} />
     </div >
   )
 }
