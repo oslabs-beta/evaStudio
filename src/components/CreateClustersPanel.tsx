@@ -7,8 +7,9 @@ const CreateClustersPanel = (): JSX.Element => {
 
   const createClusters = () => {
     // request to backend for Andres goes in here
-    axios.post('/magic', clusterInfo)
-      .then(res => console.log(res));
+    // axios.post('/magic', clusterInfo)
+    //   .then(res => console.log(res));
+    console.log(clusterInfo);
   }
 
   return (

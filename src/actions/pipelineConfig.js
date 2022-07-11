@@ -5,7 +5,7 @@ export const clusterInfoSlice = createSlice({
   initialState: {
     dataSource: '',
     numOfClusters: 0,
-    sync: ''
+    sink: ''
   },
   reducers: {
     setDataSource: (state, action) => {
@@ -14,12 +14,12 @@ export const clusterInfoSlice = createSlice({
     updateNumOfClusters: (state, action) => {
       state.numOfClusters = action.payload;
     },
-    setSync: (state, action) => {
-      state.sync = action.payload;
+    setSink: (state, action) => {
+      state.sink = action.payload;
     }
   }
 });
 
-export const { setDataSource, updateNumOfClusters, setSync } = clusterInfoSlice.actions;
+export const { setDataSource, updateNumOfClusters, setSink } = clusterInfoSlice.actions;
 
 export default clusterInfoSlice.reducer;
