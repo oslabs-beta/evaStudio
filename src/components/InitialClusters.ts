@@ -1,4 +1,4 @@
-import ReactFlow, { Node, Edge } from 'react-flow-renderer';
+import { Node, Edge } from 'react-flow-renderer';
 
 // Initial nodes / edges to load on page load
 export const initialNodes: Node[] = [

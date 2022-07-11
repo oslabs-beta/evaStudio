@@ -1,6 +1,4 @@
-import React, { useCallback } from 'react'
-import { useSelector } from 'react-redux';
-import ReactFlow from 'react-flow-renderer';
+import React from 'react'
 
 const flowCluster = (props: { type: string, kafkaCluster?: number }) => {
   const { type, kafkaCluster } = props;
