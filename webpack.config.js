@@ -26,18 +26,6 @@ module.exports = {
             '@babel/transform-async-to-generator',
           ],
         },
-<<<<<<< HEAD
-        port: 8080, // host client side files on 8080
-        compress: true,
-        hot: true,
-        liveReload: true,
-        historyApiFallback: true, // fall back to entry path every time it loads for react router
-        // proxy: {
-        //     '/': 'http://localhost:3000' // listening for all requests that come in at port 3000
-        // }
-    }
-};
-=======
       },
       {
         test: /.(css|scss)$/,
@@ -78,4 +66,3 @@ module.exports = {
     },
   },
 };
->>>>>>> 4e8a077f92b855629e246716a6ea92970a569117
