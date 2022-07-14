@@ -17,7 +17,6 @@ const DropdownConfigs = (props: { addNode: Function }) => {
         }}>
           <option>Select Source...</option>
           <option value='postgresql'>PostgreSQL</option>
-          <option value='http'>http://</option>
         </select>
       </div>
 
