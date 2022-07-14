@@ -1,11 +1,12 @@
-const path = require('path');
 const express = require('express');
-const cors = require('cors')
+const path = require('path');
+const cors = require('cors');
 const cookieParser = require('cookie-parser');
+
 const app = express();
 const PORT = 3000;
 
-/**
+/*
  * Parsing request body
  */
 app.use(cors());
@@ -15,15 +16,12 @@ app.use(cookieParser());
 
 
 // Import routes
-const metricsRoute = require('./routes/metricsRoute');
+const topicsRoute = require('./routes/topicsRoute');
 
-/**
- * define route handlers
+/*
+ * define route handlers, here
  */
-app.use('/metrics', metricsRoute);
-
-// Test route
-app.get('/', (req, res) => res.status(200).send('Hello Mate'));
+app.use('/topics', topicsRoute);
 
 
 // Catch-all endpoint
@@ -41,7 +39,7 @@ app.use((err, req, res, next) => {
   return res.status(errorObj.status).json(errorObj.message);
 });
 
-/**
+/*
  * start server
  */
 app.listen(PORT, () => {

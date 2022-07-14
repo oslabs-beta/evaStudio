@@ -5,6 +5,7 @@ import GetStartedContainer from './containers/GetStartedContainer';
 import ConnectPanel from './components/ConnectPanel';
 import CreateClustersContainer from './containers/CreateClustersContainer';
 import MainContainer from './containers/MainContainer';
+import UploadTest from './components/UploadTest';
 import './styles/globals.css';
 
 
@@ -20,6 +21,7 @@ const App = (): JSX.Element => {
             <Route path='/create-dev-clusters' element={<CreateClustersContainer />} />
             <Route path='/dashboard/*' element={<MainContainer />} />
           </Routes>
+          <UploadTest />
         </div>
       </div>
     </div >
