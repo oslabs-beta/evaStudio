@@ -15,10 +15,10 @@ const MainContainer = () => {
   }
 
   return (
-    <div id='mainContainer'>
-      <div id='mainContainerWrapper'>
+    <div className='w-full' id='mainContainer'>
+      <div className='flex w-full' id='mainContainerWrapper' >
         <NavigationPanel navigateFunc={navigateFunc} />
-        <div id='componentContainer'>
+        <div className='w-3/4' id='componentContainer'>
           <Routes>
             <Route path='overview' element={<OverviewContainer />} />
             <Route path='producers' element={<ProducersContainer />} />

@@ -1,9 +1,10 @@
 import React from 'react';
+import LogoIcon from '../assets/logo.svg';
 
 const NavBar = () => {
   return (
-    <div id='navBar'>
-      <h1>EvaStudio</h1>
+    <div className='w-100 p-5' id='navBar'>
+      <img className='md:w-60 p-2 rounded-md bg-indigo-300' src={LogoIcon} alt="" />
     </div>
   )
 }

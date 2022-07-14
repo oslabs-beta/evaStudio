@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 export const addCredentialsSlice = createSlice({
   name: 'addCredentials',
   initialState: {
-    httpLink: ''
+    httpLink: '',
+    dateNow: Date.now(),
   },
   reducers: {
     addHttpLink: (state, action) => {
