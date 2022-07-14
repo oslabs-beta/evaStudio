@@ -2,10 +2,12 @@ import { configureStore } from '@reduxjs/toolkit' // toolkit is new version of R
 import { useDispatch } from 'react-redux';
 // Import all reducers directly into the store
 import credentialReducer from './actions/credentials';
+import pipelineConfigReducer from './actions/pipelineConfig';
 
 export const store = configureStore({ // no longer need to combineReducers in an index.js file
   reducer: {
-    credentials: credentialReducer
+    credentials: credentialReducer,
+    pipelineConfig: pipelineConfigReducer
   }
 });
 
