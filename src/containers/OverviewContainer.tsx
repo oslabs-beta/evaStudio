@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
 
 const OverviewContainer = () => {
   const { httpLink, dateNow } = useSelector((state: any) => state.credentials);
@@ -10,6 +11,22 @@ const OverviewContainer = () => {
     marginWidth: "0",
     marginHeight: "0"
   }
+
+  const style = {
+    borderStyle: 'none',
+    backgroundColor: '#f5f5f5',
+    overflow: 'auto',
+  }
+
+  const [dateNow, setDateNow] = useState(Date.now());
+  const [fiveLess, setFiveLess] = React.useState(Date.now() - 300000);
+
+  const refresh = () => {
+    setDateNow(dateNow + 5000);
+    setFiveLess(fiveLess + 5000);
+  }
+
+  setInterval(refresh , 5000);
 
   return (
     <div id='overviewContainer'>
