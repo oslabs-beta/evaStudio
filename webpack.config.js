@@ -56,7 +56,7 @@ module.exports = {
       directory: path.resolve(__dirname, 'build'),
       publicPath: '/build',
     },
-    port: 8080, // host client side files on 8080
+    port: 8081, // host client side files on 8080
     compress: true,
     hot: true,
     liveReload: true,

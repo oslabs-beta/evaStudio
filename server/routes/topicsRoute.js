@@ -31,7 +31,7 @@ router.post('/add-messages',
   csvController.parseUpload,
   messagesController.addMessages,
   (req, res) => {
-    return res.status(200).json('badaboom bitch');
+    return res.status(200).json(res.locals.newMessagesData);
   });
 
 // For getting all messages in a topic
