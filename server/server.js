@@ -16,10 +16,11 @@ app.use(cookieParser());
 
 // Import routes
 const topicsRoute = require('./routes/topicsRoute');
-
+const createClustersRoute = require('./routes/createClustersRoute');
 /*
  * define route handlers, here
  */
+app.use('/create-clusters', createClustersRoute);
 app.use('/topics', topicsRoute);
 
 

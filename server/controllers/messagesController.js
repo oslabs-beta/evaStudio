@@ -1,9 +1,9 @@
 const axios = require('axios');
-
 const messagesController = {};
 
 // Retrieves all messages in a topic in Kafka
 messagesController.getAllMessages = (req, res, next) => {
+  const { topicName } = req.body;
   return next();
 }
 
@@ -12,17 +12,17 @@ messagesController.getAllMessages = (req, res, next) => {
 messagesController.addMessages = async (req, res, next) => {
   const parsedCsv = JSON.stringify(res.locals.csvData); // Java is awaiting a JSON object
 
-  const kafkaProducer = 'http://localhost:8080/api/v1/kafka/publish';
-  axios.post(kafkaProducer, parsedCsv)
+  const kafkaProducerUrl = 'http://localhost:8080/api/v1/kafka/publish';
+  axios.post(kafkaProducerUrl, parsedCsv)
     .then(newMessagesData => {
       res.locals.newMessagesData = newMessagesData
       return next();
     })
     .catch(err => {
       return next({
-        log: 'Error occurred making async request to Java backend',
+        log: 'Error occurred adding messages from csv data in addMessages middleware',
         status: 500,
-        message: err,
+        message: err
       });
     });
 }

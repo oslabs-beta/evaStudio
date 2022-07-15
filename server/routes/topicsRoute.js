@@ -2,7 +2,7 @@ const express = require('express');
 const topicsController = require('../controllers/topicsController');
 const messagesController = require('../controllers/messagesController');
 const csvController = require('../controllers/csvController');
-const router = express.Router();
+const Router = express.Router();
 
 // Multer logic below is for uploading csv files from frontend and saving it to be parsed before sending it to Java
 // Interestingly, this logic does not seem to function as a middleware, must be in the router
@@ -20,13 +20,14 @@ const multerStorage = multer.diskStorage({
 const multerUpload = multer({ storage: multerStorage });
 
 
-// For adding a new topic to Kafka cluster(s)
-router.post('/add-topic', topicsController.addTopics, (req, res) => {
+// Beginning of server routing
+// For adding a new topic to Kafka cluster(s) and then returning the newly updated list of topics
+Router.post('/add-topic', topicsController.addTopics, topicsController.getAllTopics, (req, res) => {
   return res.status(200).json('placeholder for adding new topics route');
 });
 
 // For adding messages to Kafka topics from a csv file
-router.post('/add-messages',
+Router.post('/add-messages',
   multerUpload.array('uploaded_csv', 1),
   csvController.parseUpload,
   messagesController.addMessages,
@@ -35,13 +36,13 @@ router.post('/add-messages',
   });
 
 // For getting all messages in a topic
-router.get('/all-messages', messagesController.getAllMessages, (req, res) => {
+Router.get('/all-messages', messagesController.getAllMessages, (req, res) => {
   return res.status(200).json('placeholder for all messages route');
 });
 
 // For reading all topics on Kafka clusters
-router.get('/', topicsController.getAllTopics, (req, res) => {
+Router.get('/', topicsController.getAllTopics, (req, res) => {
   return res.status(200).json('placeholder for all topics route');
 });
 
-module.exports = router;
+module.exports = Router;

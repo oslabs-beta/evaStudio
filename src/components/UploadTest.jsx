@@ -7,7 +7,7 @@ const UploadComponent = () => {
   const uploadCsv = async (e) => {
     e.preventDefault();
 
-    const url = 'http://localhost:3000/topics/add-messages'
+    const url = '/topics/add-messages'
     const formData = new FormData();
     formData.append('uploaded_csv', csvFileUpload);
 
