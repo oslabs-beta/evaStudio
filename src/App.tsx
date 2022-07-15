@@ -21,7 +21,6 @@ const App = (): JSX.Element => {
             <Route path='/create-dev-clusters' element={<CreateClustersContainer />} />
             <Route path='/dashboard/*' element={<MainContainer />} />
           </Routes>
-          <CSVUploader />
         </div>
       </div>
     </div >
