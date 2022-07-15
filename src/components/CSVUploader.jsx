@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 
-const UploadComponent = () => {
+const CSVUploader = () => {
   let csvFileUpload = null;
 
   const uploadCsv = async (e) => {
@@ -26,4 +26,4 @@ const UploadComponent = () => {
   )
 }
 
-export default UploadComponent;
+export default CSVUploader;
