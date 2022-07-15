@@ -85,20 +85,27 @@ const ymlGenerator = () => {
   };
 
   const JUPYTER = {
-    image: "",
+    image: "jupyterhub/jupyterhub",
+    ports: ["8000:8000"],
+    container_name: "jupyterhub"
+  };
 
-  }
+  const SPARK = {
+    image: "bitnami/spark",
+    container_name: "spark"
+  };
 
   const YAML = {};
 
-  return (brokersInput) => {
+  return (brokersInput, source, sink) => {
     try {
       YAML.services = {};
-      YAML.services.postgres = POSTGRES;
+      if(source === 'postgresql') YAML.services.postgres = POSTGRES;
+      if(sink === 'jupyter') YAML.services.jupyter = JUPYTER;
+      if(sink === 'spark') YAML.services.spark = SPARK;
       YAML.services.zookeeper = ZOOKEPER;
       YAML.services.prometheus = PROMETHEUS;
       YAML.services.grafana = GRAFANA;
-      YAML.services.jupyter = JUPYTER;
 
       for(let i = 0; i < brokersInput; i++){
 
@@ -142,8 +149,5 @@ const ymlGenerator = () => {
     }
   }
 }
-
-const dockerComposeGenerator = ymlGenerator();
-dockerComposeGenerator(3);
 
 module.exports = ymlGenerator();

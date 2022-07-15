@@ -12,22 +12,6 @@ const OverviewContainer = () => {
     marginHeight: "0"
   }
 
-  const style = {
-    borderStyle: 'none',
-    backgroundColor: '#f5f5f5',
-    overflow: 'auto',
-  }
-
-  const [dateNow, setDateNow] = useState(Date.now());
-  const [fiveLess, setFiveLess] = React.useState(Date.now() - 300000);
-
-  const refresh = () => {
-    setDateNow(dateNow + 5000);
-    setFiveLess(fiveLess + 5000);
-  }
-
-  setInterval(refresh , 5000);
-
   return (
     <div id='overviewContainer'>
       <h1>Overview Container</h1>
