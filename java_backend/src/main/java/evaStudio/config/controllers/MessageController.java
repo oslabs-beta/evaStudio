@@ -1,5 +1,4 @@
 package evaStudio.config.controllers;
-
 import evaStudio.config.kafka.KafkaProducer;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
