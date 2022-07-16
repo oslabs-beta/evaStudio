@@ -1,4 +1,4 @@
-package net.javaguides.springboot;
+package evaStudio;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
