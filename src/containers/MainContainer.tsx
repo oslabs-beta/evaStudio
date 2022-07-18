@@ -7,6 +7,7 @@ import ConsumersContainer from './ConsumersContainer';
 import TopicsContainer from './TopicsContainer';
 import ZookeeperContainer from './ZookeeperContainer';
 import EntriesTable from '../components/EntriesTable';
+import Footer from '../components/Footer';
 
 const MainContainer = () => {
   let navigate = useNavigate();

@@ -25,6 +25,8 @@ const EntriesTable = (props: { topicSelected: boolean }): JSX.Element => {
           tableEntries.push(
             <TopicRowEntry
               topic={entry.topic}
+              partitions={entry.partitions}
+              replicated={entry.replicated}
               navigateFunc={navigateFunc}
             />
           );
@@ -35,8 +37,29 @@ const EntriesTable = (props: { topicSelected: boolean }): JSX.Element => {
     // block of HTML to be returned if a topic has NOT been selected
     return (
       <div id='entriesTable'>
-        <h1>Entries Table</h1>
-        {tableEntries}
+        <h2 className='text-3xl font-semibold mb-[20px]'>All Topics</h2>
+
+        {/* {tableEntries} */}
+        {/* For testing the onclick function */}
+        <div id='table' className='bg-white rounded-lg border-[1px]'>
+          <div id='tableHeadings' className='grid grid-cols-3 mb-[3px] border-b-2 bg-slate-700 text-white px-[50px] py-[30px]'>
+            <p>Name of Topic</p>
+            <p>Amount of Partitions</p>
+            <p>Times Replicated</p>
+          </div>
+
+          <TopicRowEntry topic={'Topic 1'} partitions={1} replicated={5} navigateFunc={navigateFunc} />
+          <TopicRowEntry topic={'Topic 2'} partitions={1} replicated={5} navigateFunc={navigateFunc} />
+          <TopicRowEntry topic={'Topic 3'} partitions={1} replicated={5} navigateFunc={navigateFunc} />
+          <TopicRowEntry topic={'Topic 4'} partitions={1} replicated={5} navigateFunc={navigateFunc} />
+          <TopicRowEntry topic={'Topic 5'} partitions={1} replicated={5} navigateFunc={navigateFunc} />
+          <TopicRowEntry topic={'Topic 6'} partitions={1} replicated={5} navigateFunc={navigateFunc} />
+          <TopicRowEntry topic={'Topic 7'} partitions={1} replicated={5} navigateFunc={navigateFunc} />
+          <TopicRowEntry topic={'Topic 8'} partitions={1} replicated={5} navigateFunc={navigateFunc} />
+          <TopicRowEntry topic={'Topic 9'} partitions={1} replicated={5} navigateFunc={navigateFunc} />
+          <TopicRowEntry topic={'Topic 10'} partitions={1} replicated={5} navigateFunc={navigateFunc} />
+        </div>
+
       </div>
     )
   }

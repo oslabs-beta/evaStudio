@@ -21,7 +21,6 @@ const TopicsContainer = () => {
       </div>
 
       <div className='mt-[40px]'>
-        <h2 className='text-3xl font-semibold mb-[20px]'>All Topics</h2>
         <Outlet /> {/* For react router to render whatever table belongs here: all topics or messages in a topic*/}
       </div>
     </div>
