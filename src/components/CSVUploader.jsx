@@ -7,11 +7,11 @@ const CSVUploader = () => {
   const uploadCsv = async (e) => {
     e.preventDefault();
 
-    const url = '/topics/add-messages'
+    const addMessagesUrl = '/topics/add-messages'
     const formData = new FormData();
     formData.append('uploaded_csv', csvFileUpload);
 
-    axios.post(url, formData)
+    axios.post(addMessagesUrl, formData)
       .then(res => console.log(res));
   }
 

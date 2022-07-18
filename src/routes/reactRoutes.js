@@ -13,4 +13,4 @@ export const consumers = '/dashboard/consumers';
 
 export const zookeeper = '/dashboard/zookeeper';
 
-export const topics = '/dashboard/topics';
+export const topics = '/dashboard/topics/all-topics';
