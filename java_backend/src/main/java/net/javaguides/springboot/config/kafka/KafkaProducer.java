@@ -12,6 +12,7 @@ public class KafkaProducer {
     private final org.springframework.kafka.core.KafkaTemplate <String, String> kafkaTemplate;
 
     public KafkaProducer (KafkaTemplate<String, String> kafkaTemplate) {
+
         this.kafkaTemplate = kafkaTemplate;
     }
 

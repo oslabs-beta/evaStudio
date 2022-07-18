@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: net.javaguides.springboot.SpringbootKafkaApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.967 s - in net.javaguides.springboot.SpringbootKafkaApplicationTests

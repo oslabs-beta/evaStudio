@@ -15,3 +15,6 @@ public class KafkaConsumer {
         LOGGER.info(String.format("Message received -> %s", message));
     }
 }
+
+
+//Logger: configures how messages are written, and by wich class.
