@@ -1,10 +1,13 @@
 net/javaguides/springboot/config/kafka/JsonKafkaProducer.class
-net/javaguides/springboot/config/kafka/JsonKafkaConsumer.class
 net/javaguides/springboot/config/controllers/TopicController.class
 net/javaguides/springboot/config/payload/User.class
 net/javaguides/springboot/config/kafka/KafkaConsumer.class
-net/javaguides/springboot/config/controllers/MessageController.class
 net/javaguides/springboot/config/controllers/JsonMessageController.class
+net/javaguides/springboot/config/WikimediaChangesProducer.class
+net/javaguides/springboot/config/WikimediaChangesHandler.class
+net/javaguides/springboot/config/kafka/JsonKafkaConsumer.class
+net/javaguides/springboot/wikimedia/WikimediaKafkaApplication.class
+net/javaguides/springboot/config/controllers/MessageController.class
 net/javaguides/springboot/config/controllers/ConsumerController.class
 net/javaguides/springboot/config/kafka/KafkaProducer.class
 net/javaguides/springboot/SpringbootKafkaApplication.class
