@@ -25,6 +25,11 @@ public class WikimediaChangesHandler implements EventHandler {
     }
 
     @Override
+    public void onClosed() throws Exception {
+
+    }
+
+    @Override
     public void onMessage(String s, MessageEvent messageEvent) throws Exception {
         LOGGER.info(String.format("event data -> %s", messageEvent.getData()));
 
