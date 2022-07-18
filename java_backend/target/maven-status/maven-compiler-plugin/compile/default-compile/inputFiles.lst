@@ -1,0 +1,9 @@
+/Users/kz/Desktop/Kafka_SpringBoot/src/main/java/net/javaguides/springboot/config/kafka/KafkaProducer.java
+/Users/kz/Desktop/Kafka_SpringBoot/src/main/java/net/javaguides/springboot/config/KafkaTopicConfig.java
+/Users/kz/Desktop/Kafka_SpringBoot/src/main/java/net/javaguides/springboot/config/kafka/JsonKafkaProducer.java
+/Users/kz/Desktop/Kafka_SpringBoot/src/main/java/net/javaguides/springboot/config/payload/User.java
+/Users/kz/Desktop/Kafka_SpringBoot/src/main/java/net/javaguides/springboot/config/kafka/KafkaConsumer.java
+/Users/kz/Desktop/Kafka_SpringBoot/src/main/java/net/javaguides/springboot/config/controllers/MessageController.java
+/Users/kz/Desktop/Kafka_SpringBoot/src/main/java/net/javaguides/springboot/config/controllers/JsonMessageController.java
+/Users/kz/Desktop/Kafka_SpringBoot/src/main/java/net/javaguides/springboot/config/kafka/JsonKafkaConsumer.java
+/Users/kz/Desktop/Kafka_SpringBoot/src/main/java/net/javaguides/springboot/SpringbootKafkaApplication.java
