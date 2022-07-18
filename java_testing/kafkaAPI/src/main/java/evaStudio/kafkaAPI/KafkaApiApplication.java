@@ -1,5 +1,6 @@
 package evaStudio.kafkaAPI;
 
+import evaStudio.kafkaAPI.domain.Event;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,4 +11,6 @@ public class KafkaApiApplication {
 		SpringApplication.run(KafkaApiApplication.class, args);
 	}
 
+	public static void sendEvent(Event event) {
+	}
 }

@@ -14,11 +14,20 @@ public class Event {
     private static Integer eventId;
     private Message message;
 
+
     public static Integer getEventId() {
         return eventId;
     }
 
     public void setEventId(Integer eventId) {
         Event.eventId = eventId;
+    }
+
+    public Message getMessage() {
+        return message;
+    }
+
+    public void setMessage(Message message) {
+        this.message = message;
     }
 }
