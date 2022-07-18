@@ -13,4 +13,6 @@ export const consumers = '/dashboard/consumers';
 
 export const zookeeper = '/dashboard/zookeeper';
 
-export const topics = '/dashboard/topics/all-topics';
+export const topics = '/dashboard/topics/all_topics';
+
+export const topicMessages = '/dashboard/topics';

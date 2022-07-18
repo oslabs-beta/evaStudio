@@ -6,8 +6,7 @@ import ProducersContainer from './ProducersContainer';
 import ConsumersContainer from './ConsumersContainer';
 import TopicsContainer from './TopicsContainer';
 import ZookeeperContainer from './ZookeeperContainer';
-import TopicsTable from '../components/TopicsTable';
-import MessagesTable from '../components/MessagesTable';
+import EntriesTable from '../components/EntriesTable';
 
 const MainContainer = () => {
   let navigate = useNavigate();
@@ -26,8 +25,8 @@ const MainContainer = () => {
             <Route path='producers' element={<ProducersContainer />} />
             <Route path='consumers' element={<ConsumersContainer />} />
             <Route path='topics' element={<TopicsContainer />}>
-              <Route path='all-topics' element={<TopicsTable />} />
-              <Route path=':topicName' element={<MessagesTable />} />
+              <Route path='all_topics' element={<EntriesTable topicSelected={false} />} />
+              <Route path=':topicName' element={<EntriesTable topicSelected={true} />} />
             </Route>
             <Route path='zookeeper' element={<ZookeeperContainer />} />
           </Routes>
