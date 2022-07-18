@@ -140,7 +140,7 @@ const ymlGenerator = () => {
       }
 
       fs.writeFileSync(
-        path.join(__dirname, '/docker/docker-compose.yml'),
+        path.join(__dirname, '/docker-compose.yml'),
         yaml.dump(YAML, { noRefs: true})
       );
     }
