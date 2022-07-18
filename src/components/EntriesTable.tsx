@@ -41,14 +41,14 @@ const EntriesTable = (props: { topicSelected: boolean }): JSX.Element => {
 
         {/* {tableEntries} */}
         {/* For testing the onclick function */}
-        <div id='table' className='bg-white rounded-lg border-[1px]'>
+        <div id='table' className='bg-white rounded-2xl border-[1px]'>
           <div id='tableHeadings' className='grid grid-cols-3 mb-[3px] border-b-2 bg-slate-700 text-white px-[50px] py-[30px]'>
             <p>Name of Topic</p>
             <p>Amount of Partitions</p>
             <p>Times Replicated</p>
           </div>
 
-          <TopicRowEntry topic={'Topic 1'} partitions={1} replicated={5} navigateFunc={navigateFunc} />
+          <TopicRowEntry topic={'Topic of Great Importance'} partitions={1} replicated={5} navigateFunc={navigateFunc} />
           <TopicRowEntry topic={'Topic 2'} partitions={1} replicated={5} navigateFunc={navigateFunc} />
           <TopicRowEntry topic={'Topic 3'} partitions={1} replicated={5} navigateFunc={navigateFunc} />
           <TopicRowEntry topic={'Topic 4'} partitions={1} replicated={5} navigateFunc={navigateFunc} />
@@ -89,15 +89,38 @@ const EntriesTable = (props: { topicSelected: boolean }): JSX.Element => {
     // block of HTML to return if a topic has been selected 
     return (
       <div id='entriesTable'>
-        <h1>Entries Table</h1>
-        <div id='addMessagePanelWrapper' className='mr-[40px] bg-white p-[30px]'>
-          <h3 className='text-2xl mb-[20px] font-medium'>Add Messages from CSV</h3>
-          <CSVUploader />
+        <h1 className='text-3xl font-semibold mb-[20px]'>{topicName}</h1>
+
+        <div className='flex'>
+          <div id='addMessagePanelWrapper' className='mr-[40px] bg-white p-[30px] min-w-1/3 max-h-[300px]'>
+            <h3 className='text-2xl mb-[20px] font-medium'>Add Messages from CSV</h3>
+            <CSVUploader />
+          </div>
+
+          <div className='bg-white p-[30px] min-w-2/3'>
+            <h3 className='text-2xl mb-[20px] font-medium'>All Messages in Topic</h3>
+
+            <div id='table' className='bg-white rounded-2xl border-[1px]'>
+              <div id='tableHeadings' className='grid grid-cols-3 mb-[3px] border-b-2 bg-slate-700 text-white px-[50px] py-[30px]'>
+                <p>Name of Topic</p>
+              </div>
+
+              <MessageRowEntry message={'I am a message'} />
+              <MessageRowEntry message={'I am a message'} />
+              <MessageRowEntry message={'I am a message'} />
+              <MessageRowEntry message={'I am a message'} />
+              <MessageRowEntry message={'I am a message'} />
+              <MessageRowEntry message={'I am a message'} />
+              <MessageRowEntry message={'I am a message'} />
+              <MessageRowEntry message={'I am a message'} />
+              <MessageRowEntry message={'I am a message'} />
+              <MessageRowEntry message={'I am a message'} />
+              <MessageRowEntry message={'I am a message'} />
+
+            </div>
+          </div>
         </div>
-        <div id='addMessagePanelWrapper' className='bg-white p-[30px]'>
-          <h3 className='text-2xl mb-[20px] font-medium'>All Messages in Topic</h3>
-          {tableEntries}
-        </div>
+
       </div>
     )
   }
