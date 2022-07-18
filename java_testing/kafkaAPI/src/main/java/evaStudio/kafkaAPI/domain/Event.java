@@ -11,6 +11,14 @@ import org.springframework.messaging.Message;
 @Data
 @Builder
 public class Event {
-    private Integer eventId;
+    private static Integer eventId;
     private Message message;
+
+    public static Integer getEventId() {
+        return eventId;
+    }
+
+    public void setEventId(Integer eventId) {
+        Event.eventId = eventId;
+    }
 }
