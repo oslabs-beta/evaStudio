@@ -1,7 +1,0 @@
-<mbean code="org.jboss.hibernate.jmx.Hibernate" name="jboss.har:service=Hibernate">
-	<depends>jboss.jca:service=LocalTxCM,name=FoobarDS</depends>
-	<attribute name="DatasourceName">java:/FoobarDS</attribute>
-	<attribute name="SessionFactoryName">java:/hibernate/SessionFactory</attribute>
-	<attribute name="Dialect">org.hibernate.dialect.HSQLDialect</attribute>
-	<attribute name="Hbm2ddlAuto">update</attribute>
-</mbean>
