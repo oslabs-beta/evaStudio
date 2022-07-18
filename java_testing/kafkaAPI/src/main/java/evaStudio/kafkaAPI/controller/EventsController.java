@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class EventsController {
 
+    // getting internal server 500 error from posting events to this endpoint
     @PostMapping("/v1/event")
     public ResponseEntity<Event> postEvent(@RequestBody Event event) {
         return ResponseEntity.status(HttpStatus.CREATED).body(event);
