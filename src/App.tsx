@@ -5,6 +5,7 @@ import GetStartedContainer from './containers/GetStartedContainer';
 import ConnectPanel from './components/ConnectPanel';
 import CreateClustersContainer from './containers/CreateClustersContainer';
 import MainContainer from './containers/MainContainer';
+import CSVUploader from './components/CSVUploader';
 import './styles/globals.css';
 
 
