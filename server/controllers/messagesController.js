@@ -3,7 +3,8 @@ const messagesController = {};
 
 // Retrieves all messages in a topic in Kafka
 messagesController.getAllMessages = (req, res, next) => {
-  const { topicName } = req.body;
+  const { topicName } = req.params;
+  console.log(topicName);
   return next();
 }
 

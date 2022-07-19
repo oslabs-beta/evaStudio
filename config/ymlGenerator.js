@@ -4,14 +4,25 @@ const path = require('path');
 
 const ymlGenerator = () => {
 
-  const JMX = {
-    image: "sscaling/jmx-prometheus-exporter",
-    environment: {
-      // CONFIG_YML: "/../jmx_exporter/config.yaml",
-      JVM_OPTS: "-Xmx512M",
+  const PROMCONFIG = {
+    global: {
+      scrape_interval: "15s",
+      evaluation_interval: "15s"
     },
+    rule_files: [null],
+    scrape_configs: [{
+      job_name: "evaStudio",
+      static_configs: [{
+        targets: []
+      }]
+    }]
+  }
+
+  const JMX = {
+    image: "bitnami/jmx-exporter:latest",
+    command: ["5566", "/etc/myconfig.yml"],
     ports: [],
-    // volumes: [],
+    volumes: [],
     container_name: "",
     depends_on: []
   };
@@ -19,19 +30,19 @@ const ymlGenerator = () => {
   const KAFKA_BROKER = {
     image: "confluentinc/cp-kafka",
     environment: {
-      KAFKA_ZOOKEEPER_CONNECT: "zookeeper1:2181",
+      KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181",
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT",
       KAFKA_INTER_BROKER_LISTENER_NAME: "PLAINTEXT",
-      CONFLUENT_METRICS_REPORTER_ZOOKEEPER_CONNECT: "zookeeper1:2181",
+      CONFLUENT_METRICS_REPORTER_ZOOKEEPER_CONNECT: "zookeeper:2181",
       CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 1,
       CONFLUENT_METRICS_ENABLE: "false",
       KAFKA_HEAP_OPTS: "-Xmx512M -Xms512M",
       KAFKA_BROKER_ID: 101,
       KAFKA_JMX_PORT: 9991,
-      KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://kafka101:29092,PLAINTEXT_HOST://localhost:9091",
+      KAFKA_ADVERTISED_LISTENERS: "",
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 2,
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 2,
-      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: "kafka101:29092"
+      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: ""
     },
     ports: [],
     volumes: [],
@@ -54,7 +65,7 @@ const ymlGenerator = () => {
   const PROMETHEUS = {
     image: "prom/prometheus",
     ports: ["9090:9090"],
-    // volumes: [],
+    volumes: ["./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml"],
     // command: "",
     container_name: "prometheus"
   };
@@ -107,12 +118,17 @@ const ymlGenerator = () => {
       YAML.services.prometheus = PROMETHEUS;
       YAML.services.grafana = GRAFANA;
 
+      const jmxExporterConfig = yaml.load(
+        fs.readFileSync(path.join(__dirname, '/jmx/jmx-exporter-template.yml'), 'utf8')
+      )
+      
       for(let i = 0; i < brokersInput; i++){
 
         YAML.services[`jmx-kafka${1 + i}`] = {
           ...JMX,
-          ports: [`${5556 + i}:5556`],
+          ports: [`${5556 + i}:5566`],
           container_name: `jmx-kafka${1 + i}`,
+          volumes: [`./jmx/jmxConfigKafka${1 + i}.yml:/etc/myconfig.yml`],
           depends_on: [`kafka${1 + i}`]
         }
 
@@ -137,11 +153,24 @@ const ymlGenerator = () => {
             CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: `kafka${i + 1}:29092`
           }
         }
+
+        PROMCONFIG.scrape_configs[0].static_configs[0].targets.push(`jmx-kafka${1 + i}:5566`);
+
+        jmxExporterConfig.hostPort = `kafka${1 + i}:999${1 + i}`;
+        fs.writeFileSync(
+          path.join(__dirname, `download/jmx/jmxConfigKafka${1 + i}.yml`),
+          yaml.dump(jmxExporterConfig, { noRefs: true})
+        );
       }
 
       fs.writeFileSync(
-        path.join(__dirname, '/docker-compose.yml'),
+        path.join(__dirname, 'download/docker-compose.yml'),
         yaml.dump(YAML, { noRefs: true})
+      );
+
+      fs.writeFileSync(
+        path.join(__dirname, 'download/prometheus/prometheus.yml'),
+        yaml.dump(PROMCONFIG, { noRefs: true})
       );
     }
     catch (error) {
