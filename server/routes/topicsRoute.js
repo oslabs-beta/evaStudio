@@ -10,10 +10,10 @@ const multer = require('multer');
 
 const multerStorage = multer.diskStorage({
   destination: (request, file, cb) => {
-    cb(null, '../uploads');
+    cb((err, next) => next({message: err}), '../uploads');
   },
   filename: (request, file, cb) => {
-    cb(null, `File: ${file} at ${Date.now()}`);
+    cb((err, next) => next({message: err}), `File: ${file} at ${Date.now()}`);
   }
 });
 
@@ -28,6 +28,16 @@ Router.post('/add-topic', topicsController.addTopics, topicsController.getAllTop
 
 // For adding messages to Kafka topics from a csv file
 Router.post('/add-messages',
+  // ((req, res, next) => {
+  //   try {
+  //     multerUpload.array('uploaded_csv', 1);
+  //     console.log('after upload');
+  //   } catch (err) {
+  //     return next({
+  //       message: err
+  //     });
+  //   }
+  // }),
   multerUpload.array('uploaded_csv', 1),
   csvController.parseUpload,
   messagesController.addMessages,

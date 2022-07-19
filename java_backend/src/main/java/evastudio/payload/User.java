@@ -1,40 +1,31 @@
 package evastudio.payload;
 
 public class User {
-    private int id;
-    private String firstName;
-    private String lastName;
-
-    public int getId() {
-        return id;
+    public String getTimestamp() {
+        return timestamp;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getMessage() {
+        return message;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
+    private String timestamp;
+    private String message;
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+        return "Message{" +
+                ", timestamp='" + timestamp + '\'' +
+                ", message='" + message + '\'' +
                 '}';
     }
 }
