@@ -8,10 +8,10 @@
 		<version>2.6.9</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>net.javaguides</groupId>
+	<groupId>evastudio</groupId>
 	<artifactId>springboot-kafka</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-kafka</name>
+	<name>evaStudio</name>
 	<description>evaStudio</description>
 	<properties>
 		<java.version>11</java.version>
@@ -63,6 +63,11 @@
 	</dependencies>
 
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/java/evaStudio</directory>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
