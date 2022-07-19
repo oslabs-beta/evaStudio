@@ -36,7 +36,7 @@ Router.post('/add-messages',
   });
 
 // For getting all messages in a topic
-Router.get('/all-messages', messagesController.getAllMessages, (req, res) => {
+Router.get('/:topicName', messagesController.getAllMessages, (req, res) => {
   return res.status(200).json('placeholder for all messages route');
 });
 

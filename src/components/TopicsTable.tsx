@@ -58,7 +58,7 @@ function preventDefault(event: React.MouseEvent) {
   event.preventDefault();
 }
 
-export default function TableConatainer() {
+export default function TopicsTable() {
   return (
     <>
       <Table size="small">
