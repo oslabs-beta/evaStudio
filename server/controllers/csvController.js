@@ -1,5 +1,5 @@
 const { parse } = require('csv-parse');
-const fs = require('fs');
+const fs = require('fs-extra');
 
 const csvController = {};
 
@@ -14,7 +14,11 @@ csvController.parseUpload = (req, res, next) => {
       })
     )
     .on('data', (dataRow) => {
-      csvData.push(dataRow);
+      const eventObj = {
+        timestamp: dataRow[0],
+        message: dataRow[1]
+      }
+      csvData.push(eventObj);
     })
     .on('end', () => {
       res.locals.csvData = csvData;
