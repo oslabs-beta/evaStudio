@@ -1,11 +1,15 @@
 package evastudio.kafka;
 
-import evastudio.payload.KafkaMessage;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import evastudio.payload.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.support.KafkaHeaders;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,13 +26,13 @@ public class JsonKafkaProducer {
 
         LOGGER.info(String.format("Message sent to -> %s", data.toString()));
 
-        ObjectWriter writer =  new ObjectMapper().writer().withDefaultPrettyPrinter();
+        ObjectWriter writer = new ObjectMapper().writer().withDefaultPrettyPrinter();
         String jsonData = writer.writeValueAsString(data);
 
-//        Message<String> message = MessageBuilder
-//                .withPayload(jsonData)
-//                .setHeader(KafkaHeaders.TOPIC, "jsonTopic")
-//                .build();
+        // Message<String> message = MessageBuilder
+        // .withPayload(jsonData)
+        // .setHeader(KafkaHeaders.TOPIC, "jsonTopic")
+        // .build();
 
         kafkaTemplate.send("jsonTopic", jsonData);
     }
@@ -41,4 +45,3 @@ public class JsonKafkaProducer {
         this.kafkaTemplate = kafkaTemplate;
     }
 }
-

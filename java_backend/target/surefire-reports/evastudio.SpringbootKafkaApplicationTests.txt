@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: evastudio.SpringbootKafkaApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.537 s - in evastudio.SpringbootKafkaApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.292 s - in evastudio.SpringbootKafkaApplicationTests
