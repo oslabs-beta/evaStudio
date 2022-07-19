@@ -33,7 +33,6 @@ const EntriesTable = (props: { topicSelected: boolean }): JSX.Element => {
         });
       });
 
-
     // block of HTML to be returned if a topic has NOT been selected
     return (
       <div id='entriesTable'>
@@ -85,7 +84,6 @@ const EntriesTable = (props: { topicSelected: boolean }): JSX.Element => {
         });
       });
 
-
     // block of HTML to return if a topic has been selected 
     return (
       <div id='entriesTable'>
@@ -105,6 +103,8 @@ const EntriesTable = (props: { topicSelected: boolean }): JSX.Element => {
                 <p>Name of Topic</p>
               </div>
 
+              {/* {tableEntries} */}
+              {/* For testing the onclick function */}
               <MessageRowEntry message={'I am a message'} />
               <MessageRowEntry message={'I am a message'} />
               <MessageRowEntry message={'I am a message'} />
