@@ -1,6 +1,9 @@
 package evastudio.payload;
 
-public class User {
+public class KafkaMessage {
+    private String timestamp;
+    private String message;
+
     public String getTimestamp() {
         return timestamp;
     }
@@ -16,11 +19,6 @@ public class User {
     public void setMessage(String message) {
         this.message = message;
     }
-
-    private String timestamp;
-    private String message;
-
-
     @Override
     public String toString() {
         return "Message{" +

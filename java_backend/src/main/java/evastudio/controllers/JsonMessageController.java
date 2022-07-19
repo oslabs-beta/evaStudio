@@ -2,7 +2,7 @@ package evastudio.controllers;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import evastudio.kafka.JsonKafkaProducer;
-import evastudio.payload.User;
+import evastudio.payload.KafkaMessage;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,8 +20,8 @@ public class JsonMessageController {
     }
 
     @PostMapping("/publish")
-    public ResponseEntity<String> publish (@RequestBody User user) {
-        kafkaProducer.sendMessage(user);
+    public ResponseEntity<String> publish (@RequestBody KafkaMessage kafkaMessage) {
+        kafkaProducer.sendMessage(kafkaMessage);
         return ResponseEntity.ok("Json Message sent to kafka topic");
     }
 }

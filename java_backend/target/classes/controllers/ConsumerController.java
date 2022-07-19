@@ -17,17 +17,22 @@ public class ConsumerController {
 
     public ConsumerController(KafkaConsumer kafkaConsumer){this.kafkaConsumer = kafkaConsumer;}
 
-    @GetMapping("/data")
+//     @GetMapping("/consume")
 //    @KafkaListener(topics = "httpTopic", groupId = "http")
-    public ResponseEntity<String> data(@RequestParam("topic") String topic) {
-        return ResponseEntity.ok("Data sent to server");
-    }
+//     public ResponseEntity<String> data(@RequestParam("topic") String topic) {
+//         return ResponseEntity.ok("Data sent to server");
+//     }
+
+//     public ResponseEntity<String> data() {
+//         final KafkaConsumer<String, String> consumer = new KafkaConsumer<>();
+//
+//        consumer.subscribe(Collections.singletonList(javaguides));
+//        return ResponseEntity.ok("Data sent to server");
+//
+//        final ConsumerRecords<Long, String> consumerRecords = consumer.poll(numMessages);
+//
+//        final ConsumerRecords<String, String>
+//     }
 
 }
 
-//findall
-//@RequestParam("data") String data
-//    @GetMapping("/hello")
-//    ResponseEntity<String> hello() {
-//        return new ResponseEntity<>("Hello World!", HttpStatus.OK);
-//    }
