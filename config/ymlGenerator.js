@@ -12,7 +12,7 @@ const ymlGenerator = () => {
     rule_files: [null],
     scrape_configs: [{
       job_name: "evaStudio",
-      statics_configs: [{
+      static_configs: [{
         targets: []
       }]
     }]
@@ -154,7 +154,7 @@ const ymlGenerator = () => {
           }
         }
 
-        PROMCONFIG.scrape_configs[0].statics_configs[0].targets.push(`jmxConfigKafka${1 + i}:5566`);
+        PROMCONFIG.scrape_configs[0].static_configs[0].targets.push(`jmx-kafka${1 + i}:5566`);
 
         jmxExporterConfig.hostPort = `kafka${1 + i}:999${1 + i}`;
         fs.writeFileSync(
