@@ -1,7 +1,7 @@
 package evastudio.kafka;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import evastudio.payload.User;
+import evastudio.payload.KafkaMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -22,7 +22,7 @@ public class JsonKafkaProducer {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public void sendMessage(User data) throws JsonProcessingException {
+    public void sendMessage(KafkaMessage data) throws JsonProcessingException {
 
         LOGGER.info(String.format("Message sent to -> %s", data.toString()));
 

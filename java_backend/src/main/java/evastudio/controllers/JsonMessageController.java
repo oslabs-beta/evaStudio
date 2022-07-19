@@ -6,7 +6,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import evastudio.kafka.JsonKafkaProducer;
-import evastudio.payload.User;
+import evastudio.payload.KafkaMessage;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,8 +24,8 @@ public class JsonMessageController {
     }
 
     @PostMapping("/publish")
-    public ResponseEntity<String> publish (@RequestBody User user) throws JsonProcessingException {
-        kafkaProducer.sendMessage(user);
+    public ResponseEntity<String> publish (@RequestBody KafkaMessage kafkaMessage) throws JsonProcessingException {
+        kafkaProducer.sendMessage(kafkaMessage);
         return ResponseEntity.ok("Json Message sent to kafka topic");
     }
 }
