@@ -27,7 +27,7 @@ const steps = [
   }
 ];
 
-export default function VerticalLinearStepper() {
+export default function VerticalLinearStepper({ createClusters } ) {
   const [activeStep, setActiveStep] = React.useState(0);
 
   const handleNext = () => {
@@ -83,9 +83,11 @@ export default function VerticalLinearStepper() {
       {activeStep === steps.length && (
         <Paper square elevation={0} sx={{ p: 3 }}>
           <Typography>All steps completed - you&apos;re finished</Typography>
-          <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-            Reset
-          </Button>
+          <button
+            className='bg-gradient-to-r from-pink-600 to-orange-600 py-3 px-6 text-lg rounded-md w-48 flex items-center justify-center gap-2 mt-[35px]'
+            onClick={createClusters}>
+              Create Pipeline
+          </button>
         </Paper>
       )}
     </Box>
