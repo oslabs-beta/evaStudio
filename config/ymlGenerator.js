@@ -1,13 +1,14 @@
 const yaml = require('js-yaml');
-const fs = require('fs');
+const fs = require('fs-extra');
 const path = require('path');
 
 const ymlGenerator = () => {
 
   const PROMCONFIG = {
     global: {
-      scrape_interval: "15s",
-      evaluation_interval: "15s"
+      scrape_interval: "26s",
+      evaluation_interval: "15s",
+      scrape_timeout: "25s"
     },
     rule_files: [null],
     scrape_configs: [{
@@ -66,13 +67,12 @@ const ymlGenerator = () => {
     image: "prom/prometheus",
     ports: ["9090:9090"],
     volumes: ["./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml"],
-    // command: "",
     container_name: "prometheus"
   };
 
   const GRAFANA = {
-    image: "grafana/grafana",
-    ports: ["3050:3050"],
+    image: "grafana/grafana-oss",
+    ports: ["3050:3000"],
     environment: {
       GF_PATHS_DATA: "/var/lib/grafana",
       GF_SECURITY_ALLOW_EMBEDDING: "true",
@@ -80,7 +80,10 @@ const ymlGenerator = () => {
       GF_SMTP_ENABLED: "true",
       GF_SECURITY_ADMIN_PASSWORD: "evastudio"
     },
-    // volumes: [],
+    volumes: [
+    "./grafana/provisioning:/etc/grafana/provisioning",
+    "./grafana/dashboards:/var/lib/grafana/dashboards"
+    ],
     container_name: "grafana",
     depends_on: ["prometheus"]
   };
@@ -121,6 +124,11 @@ const ymlGenerator = () => {
       const jmxExporterConfig = yaml.load(
         fs.readFileSync(path.join(__dirname, '/jmx/jmx-exporter-template.yml'), 'utf8')
       )
+      
+      // Checks if directories download, prometheus and jmx exist, if not, then it creates all of them
+      fs.ensureDirSync(path.join(__dirname,'/download'));
+      fs.ensureDirSync(path.join(__dirname,'/download/jmx'));
+      fs.ensureDirSync(path.join(__dirname,'/download/prometheus'));
       
       for(let i = 0; i < brokersInput; i++){
 
