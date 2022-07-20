@@ -11,9 +11,8 @@ public class KafkaConsumer {
     private static final Logger LOGGER = LoggerFactory.getLogger(KafkaConsumer.class);
 
     @KafkaListener(topics = "httpTopic", groupId = "http")
-    public boolean consume(){
-        LOGGER.info(String.format("Message received."));
-        return true;
+    public void consume(String message){
+        LOGGER.info(String.format("Message received -> %s", message));
     }
 }
 
