@@ -3,7 +3,7 @@ const ymlGenerator = require('../../config/ymlGenerator');
 const createClustersController = {};
 
 createClustersController.launchContainers = (req, res, next) => {
-  const { dataSource, numOfClusters, sink} = req.body;
+  const { dataSource, numOfClusters, sink } = req.body;
   try {
     ymlGenerator(numOfClusters, dataSource, sink);
     return next();
