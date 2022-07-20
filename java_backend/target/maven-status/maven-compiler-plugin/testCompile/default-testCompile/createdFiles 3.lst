@@ -1,0 +1,9 @@
+evastudio/SpringbootKafkaApplicationTests.class
+evastudio/unit/controller/JsonMessageControllerUnitTest.class
+evastudio/integration/controller/JsonMessageControllerIntegrationTest.class
+evastudio/integration/controller/MessageControllerIntegrationTest.class
+evastudio/unit/controller/ConsumerControllerUnitTest.class
+evastudio/integration/controller/TopicsControllerIntegrationTest.class
+evastudio/integration/controller/ConsumerControllerIntegrationTest.class
+evastudio/unit/controller/TopicsControllerUnitTest.class
+evastudio/unit/controller/MessageControllerUnitTest.class
