@@ -18,17 +18,17 @@ const MainContainer = () => {
     <div className='w-full flex' id='mainContainer'>
       <NavigationPanel navigateFunc={navigateFunc} />
 
-      <div className='flex w-full justify-center' id='mainContainerWrapper' >
-        <div id='componentContainer'>
-          <Routes>
-            <Route path='overview' element={<OverviewContainer />} />
-            <Route path='topics' element={<TopicsContainer />}>
-              <Route path='all_topics' element={<EntriesTable topicSelected={false} />} />
-              <Route path=':topicName' element={<EntriesTable topicSelected={true} />} />
-            </Route>
-            <Route path='zookeeper' element={<ZookeeperContainer />} />
-          </Routes>
-        </div>
+      <div className='flex flex-col justify-center items-center' id='mainContainerWrapper' >
+
+        <Routes>
+          <Route path='overview' element={<OverviewContainer />} />
+          <Route path='topics' element={<TopicsContainer />}>
+            <Route path='all_topics' element={<EntriesTable topicSelected={false} />} />
+            <Route path=':topicName' element={<EntriesTable topicSelected={true} />} />
+          </Route>
+          <Route path='zookeeper' element={<ZookeeperContainer />} />
+        </Routes>
+
       </div>
 
     </div>

@@ -3,7 +3,7 @@ const messagesController = {};
 
 // Retrieves all messages in a topic in Kafka
 messagesController.getAllMessages = async (req, res, next) => {
-  const query = 'SELECT * FROM events';
+  const query = 'SELECT timestamp AND message FROM datasink.events;';
 
   try {
     await postgres.query(query)

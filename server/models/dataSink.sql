@@ -1,10 +1,13 @@
-CREATE TABLE data_sink.events (
+CREATE TABLE datasink.events (
   "_id" serial NOT NULL,
-  "timestamp" varchar,
-  "message" varchar
+  "topic" varchar(255),
+  "timestamp" varchar(255),
+  "message" varchar(255)
 )
 
-CREATE TABLE data_sink.topics (
+CREATE TABLE datasink.topics (
   "_id" serial NOT NULL,
-  "topic" varchar
+  "name" varchar,
+  "partitions" int,
+  "replicas" int
 )
