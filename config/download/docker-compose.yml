@@ -20,6 +20,8 @@ services:
       ZOOKEEPER_SYNC_LIMIT: 2
     ports:
       - '2181:2181'
+    volumes: 
+      - ./kafka/zookeeper.properties:/config/zookeeper.properties
     container_name: zookeeper
   prometheus:
     image: prom/prometheus
@@ -75,7 +77,8 @@ services:
     ports:
       - '9091:9091'
       - '9991:9991'
-    volumes: []
+    volumes: 
+      - ./kafka/kafka1server.properties:/config/server.properties
     container_name: kafka1
     depends_on:
       - zookeeper
@@ -111,7 +114,8 @@ services:
     ports:
       - '9092:9092'
       - '9992:9992'
-    volumes: []
+    volumes: 
+      - ./kafka/kafka2server.properties:/config/server.properties
     container_name: kafka2
     depends_on:
       - zookeeper
@@ -147,7 +151,8 @@ services:
     ports:
       - '9093:9093'
       - '9993:9993'
-    volumes: []
+    volumes:
+      - ./kafka/kafka3server.properties:/config/server.properties
     container_name: kafka3
     depends_on:
       - zookeeper
