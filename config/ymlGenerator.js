@@ -125,11 +125,13 @@ const ymlGenerator = () => {
         fs.readFileSync(path.join(__dirname, '/jmx/jmx-exporter-template.yml'), 'utf8')
       )
       
+
       // Checks if directories download, prometheus and jmx exist, if not, then it creates all of them
       fs.ensureDirSync(path.join(__dirname,'/download'));
       fs.ensureDirSync(path.join(__dirname,'/download/jmx'));
       fs.ensureDirSync(path.join(__dirname,'/download/prometheus'));
       
+
       for(let i = 0; i < brokersInput; i++){
 
         YAML.services[`jmx-kafka${1 + i}`] = {

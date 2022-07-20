@@ -2,10 +2,21 @@ const axios = require('axios');
 const messagesController = {};
 
 // Retrieves all messages in a topic in Kafka
-messagesController.getAllMessages = (req, res, next) => {
-  const { topicName } = req.params;
-  console.log(topicName);
-  return next();
+messagesController.getAllMessages = async (req, res, next) => {
+  const query = 'SELECT * FROM events';
+
+  try {
+    await postgres.query(query)
+      .then(events => {
+        res.locals.events = events;
+        return next();
+      });
+  }
+  catch (err) {
+    return next({
+      message: err
+    });
+  }
 }
 
 // Posts messages to a Kafka topic from csv from the frontend using multer\
