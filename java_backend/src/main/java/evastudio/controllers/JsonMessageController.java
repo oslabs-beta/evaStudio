@@ -28,11 +28,3 @@ public class JsonMessageController {
     }
 }
 
-//    @PostMapping(
-//            path = "/feedback",
-//            consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
-//    public ResponseEntity<String> handleNonBrowserSubmissions(@RequestBody Feedback feedback) throws Exception {
-//        // Save feedback data
-//        return new ResponseEntity<String>("Thank you for submitting feedback", HttpStatus.OK);
-//    }
-//}
