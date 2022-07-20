@@ -1,7 +1,7 @@
 package evastudio.controllers;
 
 
-import evastudio.config.KafkaTopicConfig;
+import evastudio.KafkaTopicConfig;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.config.TopicBuilder;
