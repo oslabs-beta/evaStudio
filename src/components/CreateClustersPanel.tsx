@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 
@@ -7,9 +7,19 @@ const CreateClustersPanel = (): JSX.Element => {
 
   const createClusters = () => {
     // request to backend for Andres goes in here
-    // axios.post('/magic', clusterInfo)
-    //   .then(res => console.log(res));
-    console.log(clusterInfo);
+    axios.post('/create-clusters', clusterInfo, {
+      responseType: 'blob'
+    })
+      .then(res => {
+        const url = window.URL.createObjectURL(new Blob([res.data]));
+        console.log(url);
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', 'docker-compose.yml');
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+      });
   }
 
   return (
@@ -29,13 +39,11 @@ const CreateClustersPanel = (): JSX.Element => {
 
           <h3 className='mt-[15px] mb-[5px] font-semibold'>Step 4 - Create Data Pipeline</h3>
           <p className='ml-[10px]'>When finished designing your data pipeline, click "Create Pipeline" below to locally launch your containers.</p>
-
           <button
             className='bg-gradient-to-r from-pink-600 to-orange-600 py-3 px-6 text-lg rounded-md w-48 flex items-center justify-center gap-2 mt-[35px]'
             onClick={createClusters}>
-            Create Pipeline
+              Create Pipeline
           </button>
-
         </div>
       </div>
     </div>

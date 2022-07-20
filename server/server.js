@@ -1,11 +1,11 @@
-const path = require('path');
 const express = require('express');
-const cors = require('cors')
+const cors = require('cors');
 const cookieParser = require('cookie-parser');
+
 const app = express();
 const PORT = 3000;
 
-/**
+/*
  * Parsing request body
  */
 app.use(cors());
@@ -15,15 +15,13 @@ app.use(cookieParser());
 
 
 // Import routes
-const metricsRoute = require('./routes/metricsRoute');
-
-/**
- * define route handlers
+const topicsRoute = require('./routes/topicsRoute');
+const createClustersRoute = require('./routes/createClustersRoute');
+/*
+ * define route handlers, here
  */
-app.use('/metrics', metricsRoute);
-
-// Test route
-app.get('/', (req, res) => res.status(200).send('Hello Mate'));
+app.use('/create-clusters', createClustersRoute);
+app.use('/topics', topicsRoute);
 
 
 // Catch-all endpoint
@@ -41,7 +39,7 @@ app.use((err, req, res, next) => {
   return res.status(errorObj.status).json(errorObj.message);
 });
 
-/**
+/*
  * start server
  */
 app.listen(PORT, () => {

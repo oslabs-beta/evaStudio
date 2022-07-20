@@ -5,12 +5,12 @@ import GetStartedContainer from './containers/GetStartedContainer';
 import ConnectPanel from './components/ConnectPanel';
 import CreateClustersContainer from './containers/CreateClustersContainer';
 import MainContainer from './containers/MainContainer';
-import './styles/globals.css';
+import Footer from './components/Footer';
 
 
 const App = (): JSX.Element => {
   return (
-    <div className='h-screen bg-indigo-50' id='app'>
+    <div className='h-screen bg-indigo-50 bg-cover mb-[50px]' id='app'>
       <NavBar />
       <div className='flex items-center'>
         <div className='d:my-auto w-fit h-fit' id='containersWrapper'>
