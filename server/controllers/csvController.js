@@ -1,3 +1,4 @@
+const { data } = require('autoprefixer');
 const { parse } = require('csv-parse');
 const fs = require('fs');
 
@@ -14,7 +15,11 @@ csvController.parseUpload = (req, res, next) => {
       })
     )
     .on('data', (dataRow) => {
-      csvData.push(dataRow);
+      const eventObj = {
+        timestamp: dataRow[0],
+        message: dataRow[1]
+      }
+      csvData.push(eventObj);
     })
     .on('end', () => {
       res.locals.csvData = csvData;
