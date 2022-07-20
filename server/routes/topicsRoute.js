@@ -37,12 +37,12 @@ Router.post('/add-messages',
 
 // For getting all messages in a topic
 Router.get('/:topicName', messagesController.getAllMessages, (req, res) => {
-  return res.status(200).json('placeholder for all messages route');
+  return res.status(200).json(res.locals.events);
 });
 
 // For reading all topics on Kafka clusters
 Router.get('/', topicsController.getAllTopics, (req, res) => {
-  return res.status(200).json('placeholder for all topics route');
+  return res.status(200).json(res.locals.topics);
 });
 
 module.exports = Router;

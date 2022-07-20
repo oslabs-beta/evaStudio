@@ -1,5 +1,5 @@
- import React from 'react';
-import { overview, producers, consumers, topics, zookeeper } from '../routes/reactRoutes';
+import React from 'react';
+import { overview, topics, zookeeper } from '../routes/reactRoutes';
 
 const NavigationPanel = (props) => {
   return (
