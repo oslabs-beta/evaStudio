@@ -15,7 +15,7 @@ const OverviewContainer = () => {
   }
 
   return (
-    <div id='overviewContainer'>
+    <div id='overviewContainer' className='flex justify-center items-center'>
       <h1>Overview Container</h1>
       <div className='flex flex-wrap'>
         <iframe src={`http://${httpLink}/d-solo/5nhADrDWk/kafka-metrics?refresh=1m&orgId=1&panelId=647&from=${dateNow - 900000}&to=${dateNow}&var-job=kafka&var-broker=All&var-topic=All&var-online_broker=3&theme=light`} style={style} className='w-1/4' frameBorder={0}></iframe>
