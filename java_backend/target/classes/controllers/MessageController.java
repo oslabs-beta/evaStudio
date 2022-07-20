@@ -1,5 +1,6 @@
 package evastudio.controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import evastudio.kafka.KafkaProducer;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,9 +20,9 @@ public class MessageController {
 
     // http://localhost:8080/api/v1/kafka/publish?message=hello%20world
     @GetMapping("/publish")
-    public ResponseEntity<String> publish(@RequestParam("message") String message) {
+    public ResponseEntity<String> publish(@RequestParam("message") String message) throws JsonProcessingException {
         kafkaProducer.sendMessage(message);
-        return ResponseEntity.ok("Message sent to Topic");
+        return ResponseEntity.ok("Message sent to topic");
     }
 }
 
