@@ -19,7 +19,7 @@ const LoginPanel = (): JSX.Element => {
 
   return (
     <div className='text-white flex flex-col md:flex-row gap-4 items-center md:justify-around' id='connectPannel'>
-      <div className='bg-slate-700 rounded-lg mx-auto px-10 py-16 max-w-xl' id='gettingStartedWrapper'>
+      <div className='bg-slate-700 bg-opacity-50 rounded-lg mx-auto px-10 py-16 max-w-xl' id='gettingStartedWrapper'>
         <form className='grid grid-cols-1 gap-8'>
           <h3 className='text-4xl font-bold'>Admin Manager URL</h3>
           <input className='rounded-lg h-[40px] pl-[10px] pr-[10px] text-black' type='text' id='portURL' placeholder='Example: 34.205.177.109:9090' value={url} onChange={(e) => setUrl(e.target.value)} size={50}></input>

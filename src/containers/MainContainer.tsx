@@ -2,8 +2,6 @@ import React from 'react'
 import NavigationPanel from '../components/NavigationPanel';
 import { Routes, Route, useNavigate } from "react-router-dom";
 import OverviewContainer from './OverviewContainer';
-import ProducersContainer from './ProducersContainer';
-import ConsumersContainer from './ConsumersContainer';
 import TopicsContainer from './TopicsContainer';
 import ZookeeperContainer from './ZookeeperContainer';
 import EntriesTable from '../components/EntriesTable';
@@ -17,14 +15,13 @@ const MainContainer = () => {
   }
 
   return (
-    <div className='w-full' id='mainContainer'>
-      <div className='flex w-full' id='mainContainerWrapper' >
-        <NavigationPanel navigateFunc={navigateFunc} />
-        <div className='w-3/4' id='componentContainer'>
+    <div className='w-full flex' id='mainContainer'>
+      <NavigationPanel navigateFunc={navigateFunc} />
+
+      <div className='flex w-full justify-center' id='mainContainerWrapper' >
+        <div className='bg-green-100' id='componentContainer'>
           <Routes>
             <Route path='overview' element={<OverviewContainer />} />
-            <Route path='producers' element={<ProducersContainer />} />
-            <Route path='consumers' element={<ConsumersContainer />} />
             <Route path='topics' element={<TopicsContainer />}>
               <Route path='all_topics' element={<EntriesTable topicSelected={false} />} />
               <Route path=':topicName' element={<EntriesTable topicSelected={true} />} />
@@ -33,6 +30,7 @@ const MainContainer = () => {
           </Routes>
         </div>
       </div>
+
     </div>
   )
 }
