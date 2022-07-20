@@ -17,7 +17,12 @@ messagesController.addMessages = async (req, res, next) => {
     const parsedRow = JSON.stringify(row);
     res.locals.newMessagesData = [];
 
-    axios.post(kafkaProducerUrl, parsedRow)
+    axios({
+      method: 'post',
+      url: kafkaProducerUrl,
+      headers: { 'Content-Type': 'application/json' },
+      data: parsedRow
+    })
       .then(newMessagesData => {
         res.locals.newMessagesData.push(newMessagesData);
       })
