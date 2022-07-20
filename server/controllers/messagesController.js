@@ -2,7 +2,7 @@ const axios = require('axios');
 const messagesController = {};
 
 // Retrieves all messages in a topic in Kafka
-messagesController.getAllMessages = (req, res, next) => {
+messagesController.getAllMessages = async (req, res, next) => {
   const query = 'SELECT * FROM events';
 
   try {

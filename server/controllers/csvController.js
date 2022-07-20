@@ -1,6 +1,6 @@
 const { data } = require('autoprefixer');
 const { parse } = require('csv-parse');
-const fs = require('fs');
+const fs = require('fs-extra');
 
 const csvController = {};
 
