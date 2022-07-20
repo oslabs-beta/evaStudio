@@ -35,7 +35,6 @@ const GetStartedContainer = () => {
         </div>
       </div>
       <img className='md:w-3/5' id='brandImg' src={heroImg} />
-
     </div>
   )
 }

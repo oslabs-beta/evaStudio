@@ -19,7 +19,7 @@ const MainContainer = () => {
       <NavigationPanel navigateFunc={navigateFunc} />
 
       <div className='flex w-full justify-center' id='mainContainerWrapper' >
-        <div className='bg-green-100' id='componentContainer'>
+        <div id='componentContainer'>
           <Routes>
             <Route path='overview' element={<OverviewContainer />} />
             <Route path='topics' element={<TopicsContainer />}>

@@ -29,7 +29,7 @@ const steps = [
 
 export default function VerticalLinearStepper({ createClusters } ) {
   const [activeStep, setActiveStep] = React.useState(0);
-
+    
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
