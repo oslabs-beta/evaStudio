@@ -15,7 +15,7 @@ const CreateClustersPanel = (): JSX.Element => {
         console.log(url);
         const link = document.createElement('a');
         link.href = url;
-        link.setAttribute('download', 'docker-compose.yml');
+        link.setAttribute('download', 'pipeline.zip');
         document.body.appendChild(link);
         link.click();
         link.remove();
