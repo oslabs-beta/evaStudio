@@ -8,6 +8,6 @@
 /Users/MaxwellShick/Documents/Codesmith/vs-code/evaStudio/java_backend/src/main/java/evastudio/KafkaTopicConfig.java
 /Users/MaxwellShick/Documents/Codesmith/vs-code/evaStudio/java_backend/src/main/java/evastudio/controllers/ConsumerController.java
 /Users/MaxwellShick/Documents/Codesmith/vs-code/evaStudio/java_backend/src/main/java/evastudio/SpringbootKafkaApplication.java
-/Users/MaxwellShick/Documents/Codesmith/vs-code/evaStudio/java_backend/src/main/java/evastudio/payload/User.java
+/Users/MaxwellShick/Documents/Codesmith/vs-code/evaStudio/java_backend/src/main/java/evastudio/payload/KafkaMessage.java
 /Users/MaxwellShick/Documents/Codesmith/vs-code/evaStudio/java_backend/src/main/java/evastudio/kafka/KafkaConsumer.java
 /Users/MaxwellShick/Documents/Codesmith/vs-code/evaStudio/java_backend/src/main/java/evastudio/controllers/MessageController.java
