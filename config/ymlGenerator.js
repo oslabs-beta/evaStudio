@@ -182,6 +182,8 @@ const ymlGenerator = () => {
         path.join(__dirname, 'download/prometheus/prometheus.yml'),
         yaml.dump(PROMCONFIG, { noRefs: true})
       );
+
+      PROMCONFIG.scrape_configs[0].static_configs[0].targets = [];
     }
     catch (error) {
       return console.log(error);
