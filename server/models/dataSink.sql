@@ -6,10 +6,6 @@ CREATE TABLE datasink.events (
 );
 
 
-INSERT INTO datasink.events (timestamp, message)
-SELECT timestamp, value
-FROM messages;
-
 UPDATE datasink.events SET topic = 'jsonTopic' WHERE _id > 0;
 
 
