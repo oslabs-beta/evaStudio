@@ -10,7 +10,7 @@ const OverviewContainer = () => {
     <div id='overviewContainer' className='flex flex-col bg-gray-700 p-5 bg-opacity-50 justify-center items-center rounded-xl'>
       <h1 className='text-4xl font-semibold mb-[20px]'>Cluster Health ❤️</h1>
 
-      <div className='grid grid-rows-3 grid-cols-4 gap-4 min-w-[80vw] min-h-[80vh] mt-[30px]'>
+      <div className='grid grid-rows-3 grid-cols-4 gap-4 min-w-[80vw] min-h-[75vh] mt-[30px]'>
 
         <iframe
           src={`http://${httpLink}/d-solo/5nhADrDWk/kafka-metrics?orgId=1&refresh=10s&from=${dateNow - 900000}&to=${dateNow}&theme=dark&panelId=647`}

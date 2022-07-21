@@ -5,6 +5,7 @@ import OverviewContainer from './OverviewContainer';
 import TopicsContainer from './TopicsContainer';
 import ZookeeperContainer from './ZookeeperContainer';
 import EntriesTable from '../components/EntriesTable';
+import MessagesTable from '../components/MessagesTable';
 import Footer from '../components/Footer';
 
 const MainContainer = () => {
@@ -23,8 +24,8 @@ const MainContainer = () => {
         <Routes>
           <Route path='overview' element={<OverviewContainer />} />
           <Route path='topics' element={<TopicsContainer />}>
-            <Route path='all_topics' element={<EntriesTable topicSelected={false} />} />
-            <Route path=':topicName' element={<EntriesTable topicSelected={true} />} />
+            <Route path='all_topics' element={<EntriesTable />} />
+            <Route path=':topicName' element={<MessagesTable />} />
           </Route>
           <Route path='zookeeper' element={<ZookeeperContainer />} />
         </Routes>

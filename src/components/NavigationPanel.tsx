@@ -9,13 +9,13 @@ const NavigationPanel = (props) => {
 
       <div>
         <div className='px-[30px] py-[10px] active:bg-gray-800 rounded-md'>
-          <button className='secondaryButton' onClick={() => props.navigateFunc(overview)}>Overview</button>
+          <button className='secondaryButton' onClick={() => props.navigateFunc(overview)}>Cluster Health</button>
         </div>
         <div className='px-[30px] py-[10px] active:bg-gray-800 rounded-md'>
-          <button className='secondaryButton' onClick={() => props.navigateFunc(topics)}>Topics</button>
+          <button className='secondaryButton' onClick={() => props.navigateFunc(topics)}>Message Logs</button>
         </div>
         <div className='px-[30px] py-[10px] active:bg-gray-800 rounded-md'>
-          <button className='secondaryButton' onClick={() => props.navigateFunc(zookeeper)}>Zookeeper</button>
+          <button className='secondaryButton' onClick={() => props.navigateFunc(zookeeper)}>System Load</button>
         </div>
       </div>
 
