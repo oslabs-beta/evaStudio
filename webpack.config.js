@@ -10,7 +10,10 @@ module.exports = {
     filename: 'bundle.js',
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: 'index.html' }),
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      favicon: './public/favicon.ico',
+    }),
     new SourceMapDevToolPlugin({ filename: '[file].map' }), // plugin eliminates the error of "ERR_UNKNOWN_URL_SCHEME"
   ],
   module: {

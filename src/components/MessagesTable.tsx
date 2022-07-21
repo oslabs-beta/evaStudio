@@ -25,28 +25,18 @@ const MessagesTable = () => {
 
         <div className='flex'>
 
-          <div className='bg-white p-[30px] min-w-2/3'>
-            <h3 className='text-2xl mb-[20px] font-medium'>All Messages in Topic</h3>
+          <div className='bg-white pt-[10px] p-[30px] min-w-2/3'>
+            <h3 className='text-2xl font-medium'>All Messages in Topic</h3>
 
-            <div id='table' className='bg-white rounded-2xl border-[1px] text-black min-w-[800px]'>
+            <div id='table' className='bg-white rounded-2xl border-[1px] text-black min-w-[800px] max-h-[70vh] overflow-y-auto'>
               <div id='tableHeadings' className='grid grid-cols-2 mb-[3px] border-b-2 bg-slate-700 text-white px-[50px] py-[30px]'>
                 <p>Timestamp</p>
                 <p>Message</p>
               </div>
 
+            <div className='h-[60vh] overflow-auto'>
               {entryRows}
-              {/* For testing the onclick function */}
-              {/* <MessageRowEntry message={'I am a message'} />
-              <MessageRowEntry message={'I am a message'} />
-              <MessageRowEntry message={'I am a message'} />
-              <MessageRowEntry message={'I am a message'} />
-              <MessageRowEntry message={'I am a message'} />
-              <MessageRowEntry message={'I am a message'} />
-              <MessageRowEntry message={'I am a message'} />
-              <MessageRowEntry message={'I am a message'} />
-              <MessageRowEntry message={'I am a message'} />
-              <MessageRowEntry message={'I am a message'} />
-              <MessageRowEntry message={'I am a message'} /> */}
+            </div>
 
             </div>
           </div>

@@ -489,4 +489,4 @@ rules:
     labels:
       service: kafka-broker
       env: cluster-demo
-hostPort: kafka3:9993
+hostPort: kafka4:9994

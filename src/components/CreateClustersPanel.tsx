@@ -6,6 +6,8 @@ const CreateClustersPanel = (): JSX.Element => {
   const clusterInfo = useSelector((state: any) => state.pipelineConfig);
 
   const createClusters = () => {
+    console.log('!!!!!!!!!!!!!CREATING A CLUSTER!!!!!!!!!!');
+
     // request to backend for Andres goes in here
     axios.post('/create-clusters', clusterInfo, {
       responseType: 'blob'
@@ -21,6 +23,31 @@ const CreateClustersPanel = (): JSX.Element => {
         link.remove();
       });
   }
+
+  const throttle = (f, t) => {
+    let ready = true;
+    let asked = false;
+
+    const receiveData = () => {
+      ready = false;
+
+      asked = false;
+
+      setTimeout(() => {
+        if (asked) receiveData();
+        else ready = true;
+      }, t);
+
+      f();
+    }
+
+    return () => {
+      if (ready) receiveData();
+      else asked = true;
+    }
+  }
+
+  const throttledCreateCluster = throttle(createClusters, 30000)
 
   return (
     <div className='w-full bg-slate-700 rounded-lg mx-auto px-10 py-16 max-w-xl text-white' id='CreateClusters'>
@@ -41,7 +68,7 @@ const CreateClustersPanel = (): JSX.Element => {
           <p className='ml-[10px]'>When finished designing your data pipeline, click "Create Pipeline" below to locally launch your containers.</p>
           <button
             className='bg-gradient-to-r from-pink-600 to-orange-600 py-3 px-6 text-lg rounded-md w-48 flex items-center justify-center gap-2 mt-[35px]'
-            onClick={createClusters}>
+            onClick={throttledCreateCluster}>
               Create Pipeline
           </button>
         </div>

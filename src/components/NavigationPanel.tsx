@@ -1,6 +1,6 @@
 import React from 'react';
 import { overview, topics, zookeeper } from '../routes/reactRoutes';
-
+import notebookLogo from '../assets/notebook.svg';
 const NavigationPanel = (props) => {
 
 
@@ -8,7 +8,7 @@ const NavigationPanel = (props) => {
     <div className='flex flex-col mt-[50px] w-[12vw]' id='navigationPanel'>
 
       <div>
-        <div className='px-[30px] py-[10px] active:bg-gray-800 rounded-md'>
+        <div className='px-[30px] py-[10px] selected active:bg-gray-800 rounded-md'>
           <button className='secondaryButton' onClick={() => props.navigateFunc(overview)}>Cluster Health</button>
         </div>
         <div className='px-[30px] py-[10px] active:bg-gray-800 rounded-md'>
@@ -19,9 +19,9 @@ const NavigationPanel = (props) => {
         </div>
       </div>
 
-      <div className='absolute bottom-10 left-0'>
-        {/* <img src= */}
-        <button className='ml-[50px]'>Documentation</button>
+      <div className='absolute p-3 bg-slate-500 bg-opacity-20 rounded-lg flex flex-col items-center ml-[50px] justify-center bottom-10 left-[-20px]'>
+        <img className='w-[100px] h-[100px]' src={notebookLogo} alt='Documentation Logo' />
+        <a href='https://evastudio.dev/' target='_blank' className='bg-emerald-500 bg-opacity-80 px-7 rounded-md p-3'>Learn More</a>
       </div>
     </div >
   )
