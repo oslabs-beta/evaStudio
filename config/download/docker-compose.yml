@@ -152,3 +152,39 @@ services:
     depends_on:
       - zookeeper
       - postgres
+  jmx-kafka4:
+    image: bitnami/jmx-exporter:latest
+    command:
+      - '5566'
+      - /etc/myconfig.yml
+    ports:
+      - '5559:5566'
+    volumes:
+      - ./jmx/jmxConfigKafka4.yml:/etc/myconfig.yml
+    container_name: jmx-kafka4
+    depends_on:
+      - kafka4
+  kafka4:
+    image: confluentinc/cp-kafka
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      CONFLUENT_METRICS_REPORTER_ZOOKEEPER_CONNECT: zookeeper:2181
+      CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 1
+      CONFLUENT_METRICS_ENABLE: 'false'
+      KAFKA_HEAP_OPTS: '-Xmx512M -Xms512M'
+      KAFKA_BROKER_ID: 104
+      KAFKA_JMX_PORT: 9994
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka4:29092,PLAINTEXT_HOST://localhost:9094
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 3
+      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: kafka4:29092
+    ports:
+      - '9094:9094'
+      - '9994:9994'
+    volumes: []
+    container_name: kafka4
+    depends_on:
+      - zookeeper
+      - postgres

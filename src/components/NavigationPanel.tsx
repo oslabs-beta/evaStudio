@@ -1,6 +1,6 @@
 import React from 'react';
 import { overview, topics, zookeeper } from '../routes/reactRoutes';
-
+import notebookLogo from '../assets/notebook.svg';
 const NavigationPanel = (props) => {
 
 
@@ -19,9 +19,9 @@ const NavigationPanel = (props) => {
         </div>
       </div>
 
-      <div className='absolute bottom-10 left-0'>
-        {/* <img src= */}
-        <button className='ml-[50px]'>Documentation</button>
+      <div className='absolute p-3 bg-slate-500 bg-opacity-20 rounded-lg flex flex-col items-center ml-[50px] justify-center bottom-10 left-0'>
+        <img className='w-[100px] h-[100px]' src={notebookLogo} alt='Documentation Logo' />
+        <a href='https://github.com/oslabs-beta/evaStudio' target='_blank' className='bg-emerald-500 bg-opacity-80 rounded-md p-3'>Documentation</a>
       </div>
     </div >
   )
