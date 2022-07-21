@@ -19,3 +19,25 @@ CREATE TABLE datasink.topics (
   "partitions" VARCHAR NOT NULL,
   "replicas" VARCHAR NOT NULL
 );
+
+
+INSERT INTO datasink.topics(topicname, partitions, replicas) 
+VALUES ('_evastudio-metrics', 12, 12)
+RETURNING *;
+
+INSERT INTO datasink.topics(topicname, partitions, replicas) 
+VALUES ('_evastudio-command', 1, 1)
+RETURNING *;
+
+
+INSERT INTO datasink.topics(topicname, partitions, replicas) 
+VALUES ('_evastudio-controlcenter-6-1-0-1-MetricsAgreggateStore-repartition', 1, 1)
+RETURNING *;
+
+INSERT INTO datasink.topics(topicname, partitions, replicas) 
+VALUES ('_consumer_offsets', 10, 2)
+RETURNING *;
+
+INSERT INTO datasink.topics(topicname, partitions, replicas) 
+VALUES ('_oprtr-metric', 12, 2)
+RETURNING *;
