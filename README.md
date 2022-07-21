@@ -12,7 +12,7 @@
 
 [EvaStudio.dev](http://www.evastudio.dev/)
 
-<p align="left"> <b> evaStudio (beta) </b> is a web GUI and testing playground for quickly designing and scaling your event-driven data architecture with Kafka brokers and Zookeeper. Designed with data scientists in mind, EvaStudio makes it easy to develop, orchestrate, experiment, and monitor machine learning workflows at scale, so you can focus on analytical challenges instead of infrastructure.</p>
+<p align="left"> <b> evaStudio (beta) </b> is a web GUI and testing playground for quickly designing and scaling your event-driven data architecture with Kafka brokers and Zookeeper. Designed with data scientists in mind, EvaStudio makes it easier to develop, orchestrate, experiment, and monitor machine learning workflows at scale, so you can focus on analytical challenges instead of infrastructure.</p>
 
 <br/>
 
@@ -53,6 +53,11 @@ You can also connect your existing Kafka clusters on AWS, provided that you foll
 # Application Architecture and Logic
 
  < Placeholder:  Kafka microservices, React with Redux & React Router, Docker, Prometheus & JMX >
+
+evaStudio is a browser-based application built using ReactJs and Node/Express, with a Java Spring Boot microservice to interface with Kafka servers and Zookeeper. In our beta version, we are exposing data endpoints on Kafka clusters using Prometheus and JMX, and displaying analytics with Grafana. In iteration, we plan to make loading and real-time updating of these panels faster using D3. We use React Flow for a drag-and-drop GUI for sketching out a data pipeline. We connect data sources and sinks to a user-selected number of Kafka servers locally, to be spun up with Docker.
+
+Currently, we allow for data to be imported as a CSV and "mock-streamed" for real-time analytics. We also connect to the PostgreSQL database, and allow for data to be streamed from an HTTP or API endpoint. We provide the option of Jupyter Hub or Spark for analytics. Future iterations will allow for more data transformations, mapping/reducing/filtering, and connections to more microservices through the GUI tool that enable easier deployment of machine learning models and applications.
+
 
 ## Built With
 * [Spring for Apache Kafka](https://spring.io/projects/spring-kafka) 2.8.9
