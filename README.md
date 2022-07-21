@@ -35,27 +35,31 @@ You can also connect your existing Kafka clusters on AWS, provided that you foll
 # Interface
 ### 1. Drag-and-drop data pipeline designer
 
+   < video placeholder >
 
 ### 2. Streaming CSV to Kafka
 
-
+   < video placeholder >
 
 ### 3. Connect to various sinks and sources for analysis
+      
+   < image placeholder >
 
 ### 4. Monitor metrics
 
+   < image placeholder >
 
 
 # Application Architecture and Logic
 
-
+ < Placeholder:  Kafka microservices, React with Redux & React Router, Docker, Prometheus & JMX >
 
 ## Built With
 * [Spring for Apache Kafka](https://spring.io/projects/spring-kafka) 2.8.9
-* [Java Spring Boot](https://spring.io/projects/spring-boot) 2.6.9 with [Spring Web Services] (https://spring.io/projects/spring-ws) 3.1.1
-* [Apache Maven](https://maven.apache.org/download.cgi) 3.8.6 requiring [Java SE Development Kit] (https://www.oracle.com/java/technologies/downloads/#java11) 11.0.16 
-* ReactJS 
-* NodeJS 
+* [Java Spring Boot](https://spring.io/projects/spring-boot) 2.6.9 with [Spring Web Services](https://spring.io/projects/spring-ws) 3.1.1
+* [Apache Maven](https://maven.apache.org/download.cgi) 3.8.6 requiring [Java SE Development Kit](https://www.oracle.com/java/technologies/downloads/#java11) 11.0.16 
+* ReactJS with Redux, React Router
+* NodeJS with Express 
 * Typescript
 * Tailwind.css
 * PostgreSQL
@@ -73,6 +77,53 @@ DOCUMENTATION:
    
 # Core Team
 
+<table><tbody><tr>
+  <td align="center" width="150">
+    <br/>
+    <strong>Andres Chaparro</strong>
+    <br/>
+    <a href="https://github.com/anch09">GitHub</a>
+    <br/>
+    <a href="https://www.linkedin.com/in/andres-chaparro-13b063135/">LinkedIn</a>
+  </td>
+   
+  <td align="center" width="150">
+    <br/>
+    <strong>Kaitlin Zhang</strong>
+    <br/>
+    <a href="https://github.com/kaizengrowth">GitHub</a>
+    <br/>
+    <a href="https://www.linkedin.com/in/kaizengrowth/">LinkedIn</a>
+  </td>
+   
+   
+  <td align="center" width="150"> 
+    <br/>
+    <strong>Maxwell Shick</strong>
+    <br/>
+    <a href="https://github.com/mshick97/">GitHub</a>
+    <br/>
+    <a href="https://www.linkedin.com/in/maxwell-shick/">LinkedIn</a>
+   </td>
+   
+  <td align="center" width="150">
+    <br/>
+    <strong>Perla Royer</strong>
+    <br/>
+    <a href="https://github.com/sattwyk">GitHub</a>
+    <br/>
+    <a href="https://www.linkedin.com/in/sattwyk/">LinkedIn</a>
+  </td>
+   
+  <td align="center" width="150">
+    <br/>
+    <strong>Sattwik Biswal </strong>
+    <br/>
+    <a href="https://github.com/sattwyk">GitHub</a>
+    <br/>
+    <a href="https://www.linkedin.com/in/sattwyk/">LinkedIn</a>
+  </td>
+</tr></tbody></table>
 
 
 </div>
