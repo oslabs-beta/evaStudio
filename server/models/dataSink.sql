@@ -1,5 +1,5 @@
 CREATE TABLE datasink.events (
-  "_id" serial NOT NULL,
+  "_id" serial PRIMARY KEY NOT NULL,
   "timestamp" varchar,
   "message" varchar,
   "topic" varchar
