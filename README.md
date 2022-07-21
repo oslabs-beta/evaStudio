@@ -62,16 +62,18 @@ Currently, we allow for data to be imported as a CSV and "mock-streamed" for rea
 * [Spring for Apache Kafka](https://spring.io/projects/spring-kafka) 2.8.9
 * [Java Spring Boot](https://spring.io/projects/spring-boot) 2.6.9 with [Spring Web Services](https://spring.io/projects/spring-ws) 3.1.1
 * [Apache Maven](https://maven.apache.org/download.cgi) 3.8.6 requiring [Java SE Development Kit](https://www.oracle.com/java/technologies/downloads/#java11) 11.0.16 
-* ReactJS with Redux, React Router
-* React Flow
-* NodeJS with Express 
-* Typescript
-* Tailwind.css
+* ReactJS v17
+* Redux 4.1
+* React Router 6.3
+* React Flow 10.3.8
+* NodeJS with Express v4.16 
+* Typescript 4.7
+* Tailwind.css v3.1
 * PostgreSQL
-* Docker
+* Docker 20.10
 * Prometheus / JMX
-* Grafana
-* Material UI
+* Grafana v9.0
+* Material UI 5.9 & 5.8
 * JUnit, Embedded Kafka & Mockito for unit & integration testing
 * Amazon Web Services & Github Actions for CI/CD
    

@@ -49,3 +49,21 @@ RETURNING *;
 INSERT INTO datasink.topics(topicname, partitions, replicas)
 VALUES ('_evastudio-speed-raw-sensor', 2, 2)
 RETURNING *;
+
+
+INSERT INTO datasink.topics(topicname, partitions, replicas) 
+VALUES ('_evastudio-audit-log-events', 10, 2)
+RETURNING *;
+
+INSERT INTO datasink.topics(topicname, partitions, replicas) 
+VALUES ('_evastudio-processing-logs', 1, 1)
+RETURNING *;
+
+INSERT INTO datasink.topics(topicname, partitions, replicas) 
+VALUES ('_evastudio-processing-logs', 1, 1)
+RETURNING *;
+
+ALTER TABLE datasink.topics ADD topic VARCHAR;
+
+UPDATE datasink.topics SET topic = 'jsonTopic' WHERE _id > 0;
+
