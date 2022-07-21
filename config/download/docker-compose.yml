@@ -6,9 +6,11 @@ services:
       POSTGRES_USER: adminEva
       POSTGRES_DB: evaDB
     container_name: postgres
-  spark:
-    image: bitnami/spark
-    container_name: spark
+  jupyter:
+    image: jupyterhub/jupyterhub
+    ports:
+      - '8000:8000'
+    container_name: jupyterhub
   zookeeper:
     image: confluentinc/cp-zookeeper
     environment:
