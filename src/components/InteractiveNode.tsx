@@ -15,7 +15,8 @@ const flowCluster = (props: { type: string, kafkaCluster?: number }) => {
   } else nodeLabel = type;
 
   return (
-    <div className='flowCluster'>
+    <div className='flowCluster bg-slate-500'>
+
       <h1>{nodeLabel}</h1>
     </div>
   )
