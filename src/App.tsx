@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 
 const App = (): JSX.Element => {
   return (
-    <div className='h-screen bg-gray-900 bg-cover mb-[50px] text-white relative' id='app'>
+    <div className='h-screen bg-gray-900 bg-cover text-white relative' id='app'>
       <NavBar />
       <div className='flex items-center'>
         <div className='d:my-auto w-fit h-fit' id='containersWrapper'>

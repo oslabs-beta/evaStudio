@@ -41,11 +41,18 @@ const OverviewContainer = () => {
         </iframe>
 
         <iframe
+        src={`http://${httpLink}/d-solo/5nhADrDWk/kafka-metrics?orgId=1&refresh=10s&from=${dateNow - 900000}&to=${dateNow}&theme=dark&panelId=467`}
+        frameBorder="1"
+        className='col-span-2 row-span-2 h-full w-full rounded-lg'
+        >
+        </iframe>
+
+        {/* <iframe
           src={`http://${httpLink}/d-solo/5nhADrDWk/kafka-metrics?orgId=1&from=${dateNow - 900000}&to=${dateNow}&var-job=evaStudio&var-broker=All&var-topic=All&var-online_broker=3&var-Filters=instance%7C%3D%7Cjmx-kafka2%3A5566&theme=dark&panelId=681`}
           frameBorder="1"
           className='col-span-2 row-span-2 h-full w-full rounded-lg'
         >
-        </iframe>
+        </iframe> */}
 
         <iframe
           src={`http://${httpLink}/d-solo/5nhADrDWk/kafka-metrics?orgId=1&from=${dateNow - 900000}&to=${dateNow}&var-job=evaStudio&var-broker=All&var-topic=All&var-online_broker=3&var-Filters=instance%7C%3D%7Cjmx-kafka2%3A5566&refresh=10s&theme=dark&panelId=688`}
@@ -55,11 +62,17 @@ const OverviewContainer = () => {
         </iframe>
 
         <iframe
+          src={`http://${httpLink}/d-solo/5nhADrDWk/kafka-metrics?orgId=1&refresh=10s&from=${dateNow - 900000}&to=${dateNow}&theme=dark&panelId=192`}
+          frameBorder="1"
+          className='w-full col-span-2 h-full rounded-lg'>
+        </iframe>
+
+        {/* <iframe
           src={`http://${httpLink}/d-solo/5nhADrDWk/kafka-metrics?orgId=1&from=${dateNow - 900000}&to=${dateNow}&var-job=evaStudio&var-broker=All&var-topic=All&var-online_broker=3&var-Filters=instance%7C%3D%7Cjmx-kafka2%3A5566&refresh=10s&theme=dark&panelId=192`}
           frameBorder="1"
           className='w-full col-span-2 h-full rounded-lg'
         >
-        </iframe>
+        </iframe> */}
 
       </div>
     </div >
