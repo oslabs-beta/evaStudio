@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 26s
+  evaluation_interval: 15s
+  scrape_timeout: 25s
+rule_files:
+  - null
+scrape_configs:
+  - job_name: evaStudio
+    static_configs:
+      - targets:
+          - jmx-kafka1:5566
