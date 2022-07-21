@@ -5,7 +5,7 @@ const NavigationPanel = (props) => {
 
 
   return (
-    <div className='flex flex-col mt-[50px] w-1/6' id='navigationPanel'>
+    <div className='flex flex-col mt-[50px] w-[12vw]' id='navigationPanel'>
 
       <div>
         <div className='px-[30px] py-[10px] active:bg-gray-800 rounded-md'>
@@ -19,7 +19,7 @@ const NavigationPanel = (props) => {
         </div>
       </div>
 
-      <div className='absolute bottom-10 left-30'>
+      <div className='absolute bottom-10 left-0'>
         {/* <img src= */}
         <button className='ml-[50px]'>Documentation</button>
       </div>

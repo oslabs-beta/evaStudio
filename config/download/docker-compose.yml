@@ -20,8 +20,6 @@ services:
       ZOOKEEPER_SYNC_LIMIT: 2
     ports:
       - '2181:2181'
-    volumes:
-      - ./kafka/zookeeper.properties:/config/zookeeper.properties
     container_name: zookeeper
   prometheus:
     image: prom/prometheus
@@ -71,14 +69,13 @@ services:
       KAFKA_BROKER_ID: 101
       KAFKA_JMX_PORT: 9991
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka1:29092,PLAINTEXT_HOST://localhost:9091
-      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
-      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 3
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: '2'
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: '2'
       CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: kafka1:29092
     ports:
       - '9091:9091'
       - '9991:9991'
-    volumes:
-      - ./kafka/kafka1server.properties:/config/server.properties
+    volumes: []
     container_name: kafka1
     depends_on:
       - zookeeper
@@ -108,52 +105,14 @@ services:
       KAFKA_BROKER_ID: 102
       KAFKA_JMX_PORT: 9992
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka2:29092,PLAINTEXT_HOST://localhost:9092
-      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
-      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 3
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: '2'
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: '2'
       CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: kafka2:29092
     ports:
       - '9092:9092'
       - '9992:9992'
-    volumes:
-      - ./kafka/kafka2server.properties:/config/server.properties
+    volumes: []
     container_name: kafka2
-    depends_on:
-      - zookeeper
-      - postgres
-  jmx-kafka3:
-    image: bitnami/jmx-exporter:latest
-    command:
-      - '5566'
-      - /etc/myconfig.yml
-    ports:
-      - '5558:5566'
-    volumes:
-      - ./jmx/jmxConfigKafka3.yml:/etc/myconfig.yml
-    container_name: jmx-kafka3
-    depends_on:
-      - kafka3
-  kafka3:
-    image: confluentinc/cp-kafka
-    environment:
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
-      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
-      CONFLUENT_METRICS_REPORTER_ZOOKEEPER_CONNECT: zookeeper:2181
-      CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 1
-      CONFLUENT_METRICS_ENABLE: 'false'
-      KAFKA_HEAP_OPTS: '-Xmx512M -Xms512M'
-      KAFKA_BROKER_ID: 103
-      KAFKA_JMX_PORT: 9993
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka3:29092,PLAINTEXT_HOST://localhost:9093
-      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
-      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 3
-      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: kafka3:29092
-    ports:
-      - '9093:9093'
-      - '9993:9993'
-    volumes:
-      - ./kafka/kafka3server.properties:/config/server.properties
-    container_name: kafka3
     depends_on:
       - zookeeper
       - postgres
