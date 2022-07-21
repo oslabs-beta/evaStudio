@@ -2,6 +2,9 @@
    <img src="https://github.com/oslabs-beta/evaStudio/blob/readme/src/assets/evaStudio_small.png" height=300/>
 <div>
 
+<br/>
+<br/>
+
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/oslabs-beta/evastudio)
 ![Release: 0.0.1](https://img.shields.io/badge/Release-0.0.1-red)
 ![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)
@@ -10,6 +13,7 @@
 
 <h2>Design and scale a real-time streaming data pipeline at the click of a button.</h2>
 
+<br/>
 
 <p align="left"> <b> evaStudio (beta) </b> is a web GUI and testing playground for quickly designing and scaling your event-driven data architecture with Kafka brokers and Zookeeper. Designed with data scientists in mind, EvaStudio makes it easier to develop, orchestrate, experiment, and monitor machine learning workflows at scale, so you can focus on analytical challenges instead of infrastructure.</p>
 
@@ -34,24 +38,22 @@ You can also connect your existing Kafka clusters on AWS, provided that you foll
 # Interface
 ### 1. Drag-and-drop data pipeline designer
 
-   < video placeholder >
+   <img src="https://github.com/oslabs-beta/evaStudio/blob/demo/src/assets/CreateCluster_demo.gif" style="height: 35rem;" />
 
-### 2. Streaming CSV to Kafka
+### 2. Create "mock-streaming" data by uploading a CSV to run through Kafka clusters
 
-   < video placeholder >
+   <img src="https://github.com/oslabs-beta/evaStudio/blob/demo/src/assets/StreamingCSV_demo.gif" style="height: 35rem;" />
 
-### 3. Connect to various sinks and sources for analysis
+### 3. Monitor cluster health. Manage brokers, topics, partitions, and messages.
       
-   < image placeholder >
+   <img src="https://github.com/oslabs-beta/evaStudio/blob/demo/src/assets/ClusterHealth.png" style="width: 45rem;" />
 
-### 4. Monitor metrics
+### 4. Monitor system metrics: fetch response latency, throughput (messages & bytes per second), CPU and JVM usage, Zookeeper failures.
 
-   < image placeholder >
+  <img src="https://github.com/oslabs-beta/evaStudio/blob/demo/src/assets/SystemLoad.png" style="height: 35rem;" />
 
 
 # Application Architecture and Logic
-
- < Placeholder:  Kafka microservices, React with Redux & React Router, Docker, Prometheus & JMX >
 
 evaStudio is a browser-based application built using ReactJs and Node/Express, with a Java Spring Boot microservice to interface with Kafka servers and Zookeeper. In our beta version, we are exposing data endpoints on Kafka clusters using Prometheus and JMX, and displaying analytics with Grafana. In iteration, we plan to make loading and real-time updating of these panels faster using D3. We use React Flow for a drag-and-drop GUI for sketching out a data pipeline. We connect data sources and sinks to a user-selected number of Kafka servers locally, to be spun up with Docker.
 
@@ -59,9 +61,10 @@ Currently, we allow for data to be imported as a CSV and "mock-streamed" for rea
 
 
 ## Built With
-* [Spring for Apache Kafka](https://spring.io/projects/spring-kafka) 2.8.9
-* [Java Spring Boot](https://spring.io/projects/spring-boot) 2.6.9 with [Spring Web Services](https://spring.io/projects/spring-ws) 3.1.1
-* [Apache Maven](https://maven.apache.org/download.cgi) 3.8.6 requiring [Java SE Development Kit](https://www.oracle.com/java/technologies/downloads/#java11) 11.0.16 
+* Apache Kafka v3.2.0
+* Spring for Apache Kafka v2.8.9
+* Java Spring Boot v2.6.9 with Spring Web Services v3.1.1
+* Apache Maven v3.8.6 requiring Java SE Development Kit v11.0.16 
 * ReactJS v17
 * Redux 4.1
 * React Router 6.3
@@ -69,24 +72,23 @@ Currently, we allow for data to be imported as a CSV and "mock-streamed" for rea
 * NodeJS with Express v4.16 
 * Typescript 4.7
 * Tailwind.css v3.1
-* PostgreSQL
+* PostgreSQL v14
 * Docker 20.10
-* Prometheus / JMX
+* Prometheus & JMX Exporter v0.17.0
 * Grafana v9.0
-* Material UI 5.9 & 5.8
+* Material UI v5.9 & v5.8
 * JUnit, Embedded Kafka & Mockito for unit & integration testing
 * Amazon Web Services & Github Actions for CI/CD
    
-DOCUMENTATION:
-* Next.js
-* Vercel
+### DOCUMENTATION:
+* Next.js with Vercel
    
    
 # Core Team
 
 <table><tbody><tr>
-  <td align="center" width="150">
-    <img src="https://github.com/oslabs-beta/evaStudio/blob/readme/src/assets/andres.jpg" style="height: 5rem; width: 5rem;" />
+  <td align="center" width="180">
+    <img src="https://github.com/oslabs-beta/evaStudio/blob/readme/src/assets/andres.jpg" style="height: 8rem; width: 8rem;" />
     <br/>
     <strong>Andres Chaparro</strong>
     <br/>
@@ -95,8 +97,8 @@ DOCUMENTATION:
     <a href="https://www.linkedin.com/in/andres-chaparro-13b063135/">LinkedIn</a>
   </td>
    
-  <td align="center" width="150">
-    <img src="https://github.com/oslabs-beta/evaStudio/blob/readme/src/assets/kaitlin.png" style="height: 5rem; width: 5rem;" />
+  <td align="center" width="180">
+    <img src="https://github.com/oslabs-beta/evaStudio/blob/readme/src/assets/kaitlin.png" style="height: 8rem; width: 8rem;" />
     <br/>
     <strong>Kaitlin Zhang</strong>
     <br/>
@@ -106,8 +108,8 @@ DOCUMENTATION:
   </td>
    
    
-  <td align="center" width="150"> 
-    <img src="https://github.com/oslabs-beta/evaStudio/blob/readme/src/assets/max.jpeg" style="height: 5rem; width: 5rem;" />
+  <td align="center" width="180"> 
+    <img src="https://github.com/oslabs-beta/evaStudio/blob/readme/src/assets/max.jpeg" style="height: 8rem; width: 8rem;" />
     <br/>
     <strong>Maxwell Shick</strong>
     <br/>
@@ -116,8 +118,8 @@ DOCUMENTATION:
     <a href="https://www.linkedin.com/in/maxwell-shick/">LinkedIn</a>
    </td>
    
-  <td align="center" width="150">
-    <img src="https://github.com/oslabs-beta/evaStudio/blob/readme/src/assets/perla.jpeg" style="height: 5rem; width: 5rem;" />
+  <td align="center" width="180">
+    <img src="https://github.com/oslabs-beta/evaStudio/blob/readme/src/assets/perla.jpeg" style="height: 8rem; width: 8rem;" />
     <br/>
     <strong>Perla Royer</strong>
     <br/>
@@ -126,8 +128,8 @@ DOCUMENTATION:
     <a href="https://www.linkedin.com/in/sattwyk/">LinkedIn</a>
   </td>
    
-  <td align="center" width="150">
-    <img src="https://github.com/oslabs-beta/evaStudio/blob/readme/src/assets/sattwik.jpeg" style="height: 5rem; width: 5rem;" />
+  <td align="center" width="180">
+    <img src="https://github.com/oslabs-beta/evaStudio/blob/readme/src/assets/sattwik.jpeg" style="height: 8rem; width: 8rem;" />
     <br/>
     <strong>Sattwik Biswal </strong>
     <br/>
@@ -137,5 +139,7 @@ DOCUMENTATION:
   </td>
 </tr></tbody></table>
 
+## With Special Thanks To:
+Our advisors [Mia Zeng](https://www.linkedin.com/in/miaowen-zeng/) and [Brandon McKallagat](https://www.linkedin.com/in/braden-mckallagat-1a8b77b3/)
 
 </div>
