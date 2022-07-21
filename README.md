@@ -30,6 +30,8 @@ To install our web application locally, you will need Node Package Manager, Java
 * Manage topics and messages directly inside our web GUI. 
 * <b> Monitor cluster health, and check performance metrics for load, latency, throughput, disk usage, and messages and bytes in and out per second, in order to test and scale your data architecture before loading into production. </b>
 
+You can also connect your existing Kafka clusters on AWS, provided that you follow our [setup instructions](https://www.evastudio.dev) for Prometheus, JMX, and Grafana installation.
+
 # Interface
 ### 1. Drag-and-drop data pipeline designer
 
@@ -48,9 +50,27 @@ To install our web application locally, you will need Node Package Manager, Java
 
 
 
-# Built With
-
-
+## Built With
+* [Spring for Apache Kafka](https://spring.io/projects/spring-kafka) 2.8.9
+* [Java Spring Boot](https://spring.io/projects/spring-boot) 2.6.9 with [Spring Web Services] (https://spring.io/projects/spring-ws) 3.1.1
+* [Apache Maven](https://maven.apache.org/download.cgi) 3.8.6 requiring [Java SE Development Kit] (https://www.oracle.com/java/technologies/downloads/#java11) 11.0.16 
+* ReactJS 
+* NodeJS 
+* Typescript
+* Tailwind.css
+* PostgreSQL
+* Docker
+* Prometheus / JMX
+* Grafana
+* React Flow
+* Material UI
+* Amazon Web Services & Github Actions for CI/CD
+   
+DOCUMENTATION:
+* Next.js
+* Vercel
+   
+   
 # Core Team
 
 
