@@ -64,6 +64,7 @@ VALUES ('_evastudio-processing-logs', 1, 1)
 RETURNING *;
 
 ALTER TABLE datasink.topics ADD topic VARCHAR;
+ALTER TABLE datasink.topics ADD topic VARCHAR;
 
 UPDATE datasink.topics SET topic = 'jsonTopic' WHERE _id > 0;
 
