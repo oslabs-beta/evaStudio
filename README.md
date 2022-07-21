@@ -33,14 +33,14 @@ To install our web application locally, you will need Docker, Node Package Manag
 * Manage topics and messages directly inside our web GUI. 
 * <b> Monitor cluster health, and check performance metrics for load, latency, throughput, disk usage, and messages and bytes in and out per second, in order to test and scale your data architecture before loading into production. </b>
 
-You can also connect your existing Kafka clusters on AWS, provided that you follow our [setup instructions](https://www.evastudio.dev) for Prometheus, JMX, and Grafana installation.
+You can also connect your existing Kafka clusters on AWS, provided that you follow our setup instructions in our documentation for Prometheus, JMX, and Grafana installation.
 
 # Interface
 ### 1. Drag-and-drop data pipeline designer
 
    <img src="https://github.com/oslabs-beta/evaStudio/blob/demo/src/assets/CreateCluster_demo.gif" style="height: 35rem;" />
 
-### 2. Create "mock-streaming" data by uploading a CSV to run through Kafka clusters
+### 2. Stream data via HTTP / API or by uploading a CSV to run through Kafka clusters
 
    <img src="https://github.com/oslabs-beta/evaStudio/blob/demo/src/assets/StreamingCSV_demo.gif" style="height: 35rem;" />
 
