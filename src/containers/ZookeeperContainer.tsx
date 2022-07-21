@@ -16,16 +16,16 @@ const ZookeeperContainer = () => {
 
       <div className='grid grid-rows-3 grid-cols-2 gap-4 min-w-[80vw] min-h-[75vh] mt-[30px]'>
         <iframe
-          src={`http://${httpLink}/d-solo/5nhADrDWk/kafka-metrics?orgId=1&refresh=1m&from=${dateNow - 900000}&to=${dateNow}&theme=dark&panelId=138`}
+          src={`http://${httpLink}/d-solo/5nhADrDWk/kafka-metrics?orgId=1&refresh=5s&from=${dateNow - 900000}&to=${dateNow}&theme=dark&panelId=138`}
           frameBorder="`"
           className='col-span-1 row-span-1 h-full w-full rounded-lg'
         >
         </iframe>
 
         <iframe
-        src={`http://${httpLink}/d-solo/5nhADrDWk/kafka-metrics?orgId=1&refresh=1m&from=${dateNow - 900000}&to=${dateNow}&theme=dark&panelId=139`}
-        frameBorder="1"
-        className='col-span-1 row-span-1 h-full w-full rounded-lg'
+          src={`http://${httpLink}/d-solo/5nhADrDWk/kafka-metrics?orgId=1&refresh=5s&from=${dateNow - 900000}&to=${dateNow}&theme=dark&panelId=139`}
+          frameBorder="1"
+          className='col-span-1 row-span-1 h-full w-full rounded-lg'
         ></iframe>
 
 
@@ -44,8 +44,8 @@ const ZookeeperContainer = () => {
         >
         </iframe> */}
 
-        <iframe src={`http://54.175.34.47:3000/d-solo/5nhADrDWk/kafka-metrics?orgId=1&refresh=1m&from=1658415790596&to=1658419390596&theme=dark&panelId=163`} frameBorder="0"
-        className='col-span-2 row-span-1 h-full w-full rounded-lg'
+        <iframe src={`http://54.175.34.47:3000/d-solo/5nhADrDWk/kafka-metrics?orgId=1&refresh=10s&from=1658415790596&to=1658419390596&theme=dark&panelId=163`} frameBorder="0"
+          className='col-span-2 row-span-1 h-full w-full rounded-lg'
         ></iframe>
 
 
@@ -56,7 +56,7 @@ const ZookeeperContainer = () => {
         >
         </iframe> */}
 
-        <iframe src={`http://54.175.34.47:3000/d-solo/5nhADrDWk/kafka-metrics?orgId=1&refresh=1m&from=1658415819271&to=1658419419271&theme=dark&panelId=81`} frameBorder="0"
+        <iframe src={`http://54.175.34.47:3000/d-solo/5nhADrDWk/kafka-metrics?orgId=1&refresh=10s&from=1658415819271&to=1658419419271&theme=dark&panelId=81`} frameBorder="0"
           className='col-span-2 row-span-1 h-full w-full rounded-lg'
 
         ></iframe>

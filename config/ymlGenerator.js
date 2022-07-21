@@ -48,7 +48,7 @@ const ymlGenerator = () => {
     ports: [],
     volumes: [],
     container_name: "",
-    depends_on: ["zookeeper","postgres"]
+    depends_on: ["zookeeper", "postgres"]
   };
 
   const ZOOKEPER = {
@@ -65,7 +65,7 @@ const ymlGenerator = () => {
 
   const PROMETHEUS = {
     image: "prom/prometheus",
-    ports: ["9090:9090"],
+    ports: ["9099:9090"],
     volumes: ["./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml"],
     container_name: "prometheus"
   };
@@ -81,8 +81,8 @@ const ymlGenerator = () => {
       GF_SECURITY_ADMIN_PASSWORD: "evastudio"
     },
     volumes: [
-    "./grafana/provisioning:/etc/grafana/provisioning",
-    "./grafana/dashboards:/var/lib/grafana/dashboards"
+      "./grafana/provisioning:/etc/grafana/provisioning",
+      "./grafana/dashboards:/var/lib/grafana/dashboards"
     ],
     container_name: "grafana",
     depends_on: ["prometheus"]
@@ -114,9 +114,9 @@ const ymlGenerator = () => {
   return (brokersInput, source, sink) => {
     try {
       YAML.services = {};
-      if(source === 'postgresql') YAML.services.postgres = POSTGRES;
-      if(sink === 'jupyter') YAML.services.jupyter = JUPYTER;
-      if(sink === 'spark') YAML.services.spark = SPARK;
+      if (source === 'postgresql') YAML.services.postgres = POSTGRES;
+      if (sink === 'jupyter') YAML.services.jupyter = JUPYTER;
+      if (sink === 'spark') YAML.services.spark = SPARK;
       YAML.services.zookeeper = ZOOKEPER;
       YAML.services.prometheus = PROMETHEUS;
       YAML.services.grafana = GRAFANA;
@@ -124,15 +124,15 @@ const ymlGenerator = () => {
       const jmxExporterConfig = yaml.load(
         fs.readFileSync(path.join(__dirname, '/jmx/jmx-exporter-template.yml'), 'utf8')
       )
-      
+
 
       // Checks if directories download, prometheus and jmx exist, if not, then it creates all of them
-      fs.ensureDirSync(path.join(__dirname,'/download'));
-      fs.ensureDirSync(path.join(__dirname,'/download/jmx'));
-      fs.ensureDirSync(path.join(__dirname,'/download/prometheus'));
-      
+      fs.ensureDirSync(path.join(__dirname, '/download'));
+      fs.ensureDirSync(path.join(__dirname, '/download/jmx'));
+      fs.ensureDirSync(path.join(__dirname, '/download/prometheus'));
 
-      for(let i = 0; i < brokersInput; i++){
+
+      for (let i = 0; i < brokersInput; i++) {
 
         YAML.services[`jmx-kafka${1 + i}`] = {
           ...JMX,
@@ -153,9 +153,8 @@ const ymlGenerator = () => {
             ...KAFKA_BROKER.environment,
             KAFKA_BROKER_ID: 101 + i,
             KAFKA_JMX_PORT: 9991 + i,
-            KAFKA_ADVERTISED_LISTENERS: `PLAINTEXT://kafka${
-              i + 1
-            }:29092,PLAINTEXT_HOST://localhost:909${i + 1}`,
+            KAFKA_ADVERTISED_LISTENERS: `PLAINTEXT://kafka${i + 1
+              }:29092,PLAINTEXT_HOST://localhost:909${i + 1}`,
             KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR:
               brokersInput < 3 ? brokersInput : 3,
             KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR:
@@ -169,18 +168,18 @@ const ymlGenerator = () => {
         jmxExporterConfig.hostPort = `kafka${1 + i}:999${1 + i}`;
         fs.writeFileSync(
           path.join(__dirname, `download/jmx/jmxConfigKafka${1 + i}.yml`),
-          yaml.dump(jmxExporterConfig, { noRefs: true})
+          yaml.dump(jmxExporterConfig, { noRefs: true })
         );
       }
 
       fs.writeFileSync(
         path.join(__dirname, 'download/docker-compose.yml'),
-        yaml.dump(YAML, { noRefs: true})
+        yaml.dump(YAML, { noRefs: true })
       );
 
       fs.writeFileSync(
         path.join(__dirname, 'download/prometheus/prometheus.yml'),
-        yaml.dump(PROMCONFIG, { noRefs: true})
+        yaml.dump(PROMCONFIG, { noRefs: true })
       );
 
       PROMCONFIG.scrape_configs[0].static_configs[0].targets = [];

@@ -10,5 +10,3 @@ scrape_configs:
       - targets:
           - jmx-kafka1:5566
           - jmx-kafka2:5566
-          - jmx-kafka3:5566
-          - jmx-kafka4:5566
