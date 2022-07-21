@@ -5,7 +5,7 @@ const topicsController = {};
 
 // For getting all topics that currently exist on Kafka clusters
 topicsController.getAllTopics = async (req, res, next) => {
-  const query = 'SELECT * FROM topics';
+  const query = 'SELECT DISTINCT topic FROM datasink.events;';
 
   try {
     await postgres.query(query)

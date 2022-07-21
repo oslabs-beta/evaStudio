@@ -2,26 +2,28 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router';
 import { Outlet } from 'react-router';
+import CSVUploader from '../components/CSVUploader';
 
 const TopicsContainer = () => {
   const { httpLink, dateNow } = useSelector((state: any) => state.credentials);
 
-  const style = {
-    borderStyle: 'none',
-  }
-
-
   return (
-    <div id='topicsContainer'>
-      <h1 className='text-4xl font-bold mb-[20px]'>Topic Overview</h1>
-      <div className='flex flex-wrap'>
-        <iframe src={`http://${httpLink}/d-solo/5nhADrDWk/kafka-metrics?refresh=1m&orgId=1&panelId=152&from=${dateNow - 900000}&to=${dateNow}&var-job=kafka&var-broker=All&var-topic=All&var-online_broker=3&theme=light`} width="450" height="200" style={style}></iframe>
-        <iframe src={`http://${httpLink}/d-solo/5nhADrDWk/kafka-metrics?refresh=1m&orgId=1&panelId=155&from=${dateNow - 900000}&to=${dateNow}&var-job=kafka&var-broker=All&var-topic=All&var-online_broker=3&theme=light`} width="450" height="200" style={style} ></iframe>
-        <iframe src={`http://${httpLink}/d-solo/5nhADrDWk/kafka-metrics?refresh=1m&orgId=1&panelId=50&from=${dateNow - 900000}&to=${dateNow}&var-job=kafka&var-broker=All&var-topic=All&var-online_broker=3&theme=light`} width="450" height="200" style={style}></iframe>
-      </div>
+    <div id='topicsContainer' className='flex flex-col bg-gray-700 pt-[20px] px-[35px] bg-opacity-50 justify-center items-center rounded-xl'>
+      <h1 className='text-4xl font-semibold mb-[20px]'>Message Logs</h1>
 
-      <div className='mt-[40px]'>
-        <Outlet /> {/* For react router to render whatever table belongs here: all topics or messages in a topic*/}
+      <div className='flex justify-center min-w-[80vw] min-h-[75vh] mt-[30px]'>
+
+        <div
+          id='addMessagePanelWrapper'
+          className='mr-[40px] mt-[10px]'
+        >
+
+          <CSVUploader />
+        </div>
+
+        {/* For react router to render whatever table belongs here: all topics or messages in a topic*/}
+        <Outlet />
+
       </div>
     </div>
   )

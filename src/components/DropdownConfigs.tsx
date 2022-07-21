@@ -7,7 +7,7 @@ const DropdownConfigs = (props: { addNode: Function }) => {
   const { addNode } = props; // for dynamically adding nodes based off of user input
 
   return (
-    <div className='absolute top-[10px] left-[10px] z-[1000] flex flex-row' id='dropdownConfigs'>
+    <div className='absolute top-[10px] left-[10px] z-[1000] text-black flex flex-row' id='dropdownConfigs'>
 
       <div className='pr-[35px]'>
         <h4 className='underline'>Data Source</h4>
