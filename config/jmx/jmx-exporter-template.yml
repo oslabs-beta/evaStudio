@@ -1,46 +1,45 @@
 lowercaseOutputName: true
 
 lowercaseOutputLabelNames: true
-# whitelistObjectNames:
-#   - java.lang:*
-#   - kafka.cluster:*
-#   - kafka.controller:*
-#   - kafka.log:*
-#   - kafka.server:type=KafkaServer,name=BrokerState
-#   - kafka.server:type=KafkaRequestHandlerPool,*
-#   - kafka.server:type=BrokerTopicMetrics,*
-#   - kafka.server:type=FetcherLagMetrics,*
-#   - kafka.server:type=FetcherStats,*
-#   - kafka.server:type=Request,*
-#   - kafka.server:type=Fetch,*
-#   - kafka.server:type=Produce,*
-#   - kafka.server:type=ReplicaManager,*
-#   - kafka.server:type=ReplicaFetcherManager,*
-#   - kafka.server:type=SessionExpireListener,*
-#   - kafka.server:type=controller-channel-metrics,*
-#   - kafka.server:type=socket-server-metrics,*
-#   - kafka.network:type=RequestChannel,*
-#   - kafka.network:type=Processor,*
-#   - kafka.network:type=SocketServer,*
-#   - kafka.network:type=RequestMetrics,*
-#   - kafka.coordinator.group:*
-# blacklistObjectNames:
-#   - java.lang:type=ClassLoading,*
-#   - java.lang:type=Compilation,*
-#   - java.lang:type=MemoryManager,*
-#   - kafka.utils:*
-#   - kafka.controller:type=ControllerChannelManager,name=QueueSize,*
-#   - kafka.log:type=Log,name=LogEndOffset,*
-#   - kafka.log:type=Log,name=LogStartOffset,*
-#   - kafka.cluster:type=Partition,name=InSyncReplicasCount,*
-#   - kafka.cluster:type=Partition,name=LastStableOffsetLag,*
-#   - kafka.cluster:type=Partition,name=ReplicasCounts,*
-#   - kafka.cluster:type=Partition,name=UnderReplicated,*
-#   - kafka.server:type=BrokerTopicMetrics,name=TotalFetchRequestsPerSec,*
-#   - kafka.server:type=BrokerTopicMetrics,name=TotalProduceRequestsPerSec,*
-#   - kafka.server:type=BrokerTopicMetrics,name=FailedProduceRequestsPerSec,*
-#   - kafka.server:type=BrokerTopicMetrics,name=FailedFetchRequestsPerSec,*
-#   - kafka.server:type=BrokerTopicMetrics,name=BytesRejectedPerSec,*
+whitelistObjectNames:
+  - java.lang:*
+  - kafka.cluster:*
+  - kafka.controller:*
+  - kafka.log:*
+  - kafka.server:type=KafkaServer,name=BrokerState
+  - kafka.server:type=KafkaRequestHandlerPool,*
+  - kafka.server:type=BrokerTopicMetrics,*
+  - kafka.server:type=FetcherLagMetrics,*
+  - kafka.server:type=FetcherStats,*
+  - kafka.server:type=Request,*
+  - kafka.server:type=Fetch,*
+  - kafka.server:type=Produce,*
+  - kafka.server:type=ReplicaManager,*
+  - kafka.server:type=ReplicaFetcherManager,*
+  - kafka.server:type=SessionExpireListener,*
+  - kafka.server:type=controller-channel-metrics,*
+  - kafka.server:type=socket-server-metrics,*
+  - kafka.network:type=RequestChannel,*
+  - kafka.network:type=Processor,*
+  - kafka.network:type=SocketServer,*
+  - kafka.network:type=RequestMetrics,*
+  - kafka.coordinator.group:*
+  - java.lang:type=ClassLoading,*
+  - java.lang:type=Compilation,*
+  - java.lang:type=MemoryManager,*
+  - kafka.utils:*
+  - kafka.controller:type=ControllerChannelManager,name=QueueSize,*
+  - kafka.log:type=Log,name=LogEndOffset,*
+  - kafka.log:type=Log,name=LogStartOffset,*
+  - kafka.cluster:type=Partition,name=InSyncReplicasCount,*
+  - kafka.cluster:type=Partition,name=LastStableOffsetLag,*
+  - kafka.cluster:type=Partition,name=ReplicasCounts,*
+  - kafka.cluster:type=Partition,name=UnderReplicated,*
+  - kafka.server:type=BrokerTopicMetrics,name=TotalFetchRequestsPerSec,*
+  - kafka.server:type=BrokerTopicMetrics,name=TotalProduceRequestsPerSec,*
+  - kafka.server:type=BrokerTopicMetrics,name=FailedProduceRequestsPerSec,*
+  - kafka.server:type=BrokerTopicMetrics,name=FailedFetchRequestsPerSec,*
+  - kafka.server:type=BrokerTopicMetrics,name=BytesRejectedPerSec,*
 
 rules:
 # Special cases and very specific rules

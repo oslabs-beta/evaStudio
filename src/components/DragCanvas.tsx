@@ -106,8 +106,9 @@ const DragCanvas = (): JSX.Element => {
         onConnect={onConnect}
         defaultEdgeOptions={defaultEdgeOptions}
         fitView
+        style={{background: '#cbd5e1'}}
       >
-        <Background color='#1A192B' />
+        <Background />
         <Controls />
       </ReactFlow>
       <DropdownConfigs addNode={addNode} />
