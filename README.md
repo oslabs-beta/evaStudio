@@ -94,7 +94,7 @@ Currently, we allow for data to be imported as a CSV and "mock-streamed" for rea
     <br/>
     <a href="https://github.com/anch09">GitHub</a>
     <br/>
-    <a href="https://www.linkedin.com/in/andres-chaparro-13b063135/">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/andreschc/">LinkedIn</a>
   </td>
    
   <td align="center" width="180">
